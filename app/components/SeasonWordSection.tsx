@@ -1,0 +1,120 @@
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import devotionalImg from '../assets/images/daily-devotional.svg';
+import testimonyImg from '../assets/images/testimonies.svg';
+import AltarCall from '../assets/images/altar-call.svg';
+import AuxanoImg from '../assets/images/auxano.svg';
+import sharpThreshingImg from '../assets/images/sharp-threshing.png';
+
+export default function SeasonWordSection() {
+  return (
+    <section className="w-full flex flex-col items-center py-6 sm:py-8 md:py-12 px-3 sm:px-4">
+      <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#2B1818] mb-4 sm:mb-6 md:mb-10 font-satoshi text-center px-2">A word for the season</h2>
+      <div className="flex flex-col md:flex-row gap-4 sm:gap-6 md:gap-8 w-full max-w-5xl justify-center px-2 sm:px-0">
+        {/* Daily Devotional Card */}
+        <div className="bg-[#F3F3F3] rounded-2xl shadow-md flex-1 flex flex-col overflow-hidden min-w-0 max-w-full md:min-w-[320px] md:max-w-[500px]">
+          <div className="h-40 sm:h-48 w-full relative">
+            <Image
+              src={devotionalImg}
+              alt="Daily Devotional"
+              fill
+              className="object-cover rounded-t-2xl"
+              priority
+            />
+          </div>
+          <div className="p-3 sm:p-4 md:p-6 flex flex-col flex-1">
+            <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-[#2B1818] font-satoshi mb-2">Daily Devotional</h3>
+            <p className="text-xs sm:text-sm md:text-base text-[#2B1818] mb-3 sm:mb-4 md:mb-6">Start your day in a lovely way, fellowship with God through our 3-minutes inspiring devotionals.</p>
+            <button className="border border-black rounded-full px-3 py-1.5 sm:px-4 sm:py-2 md:px-6 md:py-2 font-medium text-black hover:bg-black hover:text-white transition self-start text-xs sm:text-sm md:text-base">FOLLOW DAILY DEVOTIONAL</button>
+          </div>
+        </div>
+        {/* Testimonies Card */}
+        <div className="bg-[#F3F3F3] rounded-2xl shadow-md flex-1 flex flex-col overflow-hidden min-w-0 max-w-full md:min-w-[320px] md:max-w-[500px]">
+          <div className="h-40 sm:h-48 w-full relative">
+            <Image
+              src={testimonyImg}
+              alt="Testimonies"
+              fill
+              className="object-cover rounded-t-2xl"
+              priority
+            />
+          </div>
+          <div className="p-3 sm:p-4 md:p-6 flex flex-col flex-1">
+            <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-[#2B1818] font-satoshi mb-2">Testimonies</h3>
+            <p className="text-xs sm:text-sm md:text-base text-[#2B1818] mb-3 sm:mb-4 md:mb-6">God is doing wondrous things among us through his word from the mouth of his servant.</p>
+            <button className="border border-black rounded-full px-3 py-1.5 sm:px-4 sm:py-2 md:px-6 md:py-2 font-medium text-black hover:bg-black hover:text-white transition self-start text-xs sm:text-sm md:text-base">OPEN TESTIMONIES</button>
+          </div>
+        </div>
+      </div>
+      {/* New Section: Call to Decision */}
+      <div className="flex flex-col md:flex-row items-center justify-center gap-4 sm:gap-6 md:gap-8 mt-6 sm:mt-10 md:mt-16 w-full max-w-5xl px-2 sm:px-0">
+        {/* Image - appears first on mobile, second on desktop */}
+        <div className="flex-1 flex items-center justify-center w-full order-1 md:order-2">
+          <div className="overflow-hidden rounded-[20px] sm:rounded-[24px] md:rounded-[32px] w-full sm:max-w-xs md:max-w-md">
+            <Image
+              src={AltarCall}
+              alt="Altar Call"
+              width={351}
+              height={280}
+              className="object-cover w-full h-auto grayscale"
+            />
+          </div>
+        </div>
+        {/* Text - appears second on mobile, first on desktop */}
+        <div className="flex-1 flex flex-col   w-full order-2 md:order-1">
+          <h3 className="font-anton font-normal text-[32px] leading-[112%]  text-[#1E1E1E] w-[294px] h-[72px]  mb-2 sm:mb-3 md:mb-4 sm:text-2xl md:text-3xl lg:text-4xl sm:font-extrabold sm:text-black sm:bg-transparent sm:w-auto sm:h-auto sm:font-satoshi sm:leading-tight text-left">HAVE YOU GIVEN YOUR<br/>LIFE TO JESUS?</h3>
+          <p className="font-satoshi font-normal text-base leading-[130%] text-black mb-3 sm:mb-4 md:mb-6 max-w-md  px-2 sm:px-0 sm:text-xs md:text-sm">
+            Do you know the trumpet can sound anytime from now? God loves you so much and his arms are wide open to you..
+          </p>
+          <Button variant="destructive" className="w-[231px] h-[45px] rounded-full px-5 font-semibold text-xs sm:text-sm md:text-[16px] shadow-md sm:w-auto sm:h-auto sm:px-6 sm:py-2.5 md:px-8 md:py-3">
+            MAKE A DECISION FOR GOD
+          </Button>
+        </div>
+      </div>
+      {/* AUXANO Section */}
+      <div className="flex flex-col md:flex-row items-center justify-center gap-4 sm:gap-6 md:gap-8 mt-6 sm:mt-10 md:mt-16 w-full max-w-5xl bg-[#F3F3F3] rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6 mx-2 sm:mx-0">
+        {/* Left Side: Image */}
+        <div className="flex-1 w-full sm:max-w-xs md:max-w-md mb-4 md:mb-0">
+          <Image
+            src={AuxanoImg}
+            alt="Auxano"
+            width={320}
+            height={320}
+            className="rounded-xl sm:rounded-2xl w-full h-auto"
+          />
+        </div>
+        {/* Right Side: Text and Button */}
+        <div className="flex-1 flex flex-col md:items-center max-w-lg w-full">
+          <p className=" text-[20px] font-big-shoulders   font-bold text-[#170000] mb-3 sm:mb-4 md:mb-6 sm:text-lg md:text-2xl  md:font-satoshi  px-2 sm:px-0">
+            Do you desire spiritual growth?<br/>Intimacy with God? Spiritual fervency? AUXANO is the avenue God has designed for your growth..
+          </p>
+          <Button variant="destructive" className="w-[204px] h-[45px] rounded-full font-semibold text-xs sm:text-sm md:text-[16px] shadow-md sm:w-auto sm:h-auto sm:px-6 sm:py-2.5 md:py-3">
+            REGISTER FOR AUXANO
+          </Button>
+        </div>
+      </div>
+      {/* Vision Section */}
+      <div className="flex flex-col md:flex-row items-center justify-center gap-4 sm:gap-6 md:gap-8 mt-6 sm:mt-10 md:mt-16 w-full max-w-5xl px-2 sm:px-0">
+        {/* Left Side: Image */}
+        <div className="flex-1 flex items-center justify-center w-full sm:max-w-xs md:max-w-md mb-4 md:mb-0">
+          <div className="relative w-full aspect-square sm:aspect-auto sm:h-48 md:h-96 rounded-xl sm:rounded-2xl md:rounded-3xl overflow-hidden">
+            <Image
+              src={sharpThreshingImg}
+              alt="Sharp Threshing Instrument"
+              fill
+              className="object-cover rounded-xl sm:rounded-2xl md:rounded-3xl"
+            />
+          </div>
+        </div>
+        {/* Right Side: Text and Button */}
+        <div className="flex-1 flex flex-col items-center sm:items-start justify-center w-full">
+          <h3 className="font-anton font-normal text-[32px] leading-[140%] tracking-normal text-[#1E1E1E] mb-2 sm:mb-3 md:mb-4 md:text-[48px] md:leading-[112%] md:w-[487px] md:h-[270px]  sm:text-left px-2 sm:px-0">
+            Behold, I will make thee<br/>a new sharp threshing<br/>instrument having teeth:<br/>thou shalt thresh the<br/>mountains, and..
+          </h3>
+          <p className="text-xs sm:text-sm md:text-base text-black mb-3 sm:mb-4 md:mb-6 text-center sm:text-left px-2 sm:px-0">God has given us a vision..</p>
+          <button className="border border-black rounded-full px-5 py-2 sm:px-6 sm:py-2.5 md:px-8 md:py-3 font-semibold text-black hover:bg-black hover:text-white transition text-xs sm:text-sm md:text-base">READ THE VISION</button>
+        </div>
+      </div>
+    </section>
+  );
+} 

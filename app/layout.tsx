@@ -1,0 +1,62 @@
+import type { Metadata, Viewport } from "next";
+import "./globals.css";
+import "./android-fixes.css";
+import Footer from "@/components/Footer";
+import NavBar from "./components/NavBar";
+import PWARegister from "./components/PWARegister";
+import ViewportFix from "./components/ViewportFix";
+
+export const metadata: Metadata = {
+  title: "GLM HQ",
+  description: "Apostle Joseph Ibrahim Gospel Labour Ministry Homepage",
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "GLM HQ",
+  },
+  icons: {
+    icon: [
+      { url: "/icon.png" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+    ],
+  },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+  themeColor: "#3a0a0a",
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <head>
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="GLM HQ" />
+        <meta name="format-detection" content="telephone=no" />
+      </head>
+      <body className="antialiased">
+        <PWARegister />
+        <ViewportFix />
+        <NavBar />
+        {children}
+        <Footer />
+      </body>
+    </html>
+  );
+}

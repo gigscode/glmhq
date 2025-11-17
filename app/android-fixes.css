@@ -1,0 +1,132 @@
+/* Android-specific fixes for UI/UX consistency */
+
+/* Fix for Android Chrome's dynamic viewport height with address bar */
+@supports (-webkit-touch-callout: none) {
+  body {
+    min-height: -webkit-fill-available;
+  }
+}
+
+/* Ensure fixed positioning works correctly on Android */
+nav[class*="fixed"] {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Fix for Android font rendering */
+body,
+input,
+textarea,
+button,
+select {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
+}
+
+/* Fix for Android touch events */
+button,
+a,
+[role="button"] {
+  touch-action: manipulation;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Fix for Android input zoom */
+input,
+textarea,
+select {
+  font-size: 16px !important;
+}
+
+/* Fix for Android overflow scrolling */
+.overflow-y-auto,
+.overflow-auto,
+[class*="overflow"] {
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+}
+
+/* Fix for Android image rendering */
+img {
+  -webkit-user-drag: none;
+  user-drag: none;
+  -webkit-touch-callout: none;
+}
+
+/* Fix for Android dialog/modal positioning */
+[role="dialog"],
+[data-radix-dialog-content] {
+  position: fixed;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
+
+/* Fix for Android safe area insets */
+@supports (padding: max(0px)) {
+  body {
+    padding-left: max(0px, env(safe-area-inset-left));
+    padding-right: max(0px, env(safe-area-inset-right));
+  }
+  
+  nav[class*="fixed"] {
+    padding-left: max(0px, env(safe-area-inset-left));
+    padding-right: max(0px, env(safe-area-inset-right));
+  }
+}
+
+/* Fix for Android hardware acceleration */
+.transition,
+[class*="transition"] {
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Fix for Android flexbox issues */
+.flex,
+[class*="flex"] {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+}
+
+/* Fix for Android SVG rendering */
+svg {
+  shape-rendering: geometricPrecision;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+/* Fix for Android button appearance */
+button {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  background: none;
+}
+
+/* Fix for Android link tap delay */
+a {
+  -webkit-tap-highlight-color: transparent;
+  tap-highlight-color: transparent;
+}
+
+/* Fix for Android viewport units */
+.h-screen,
+[class*="h-screen"] {
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+}
+
+/* Fix for Android position sticky */
+[class*="sticky"] {
+  position: -webkit-sticky;
+  position: sticky;
+}
