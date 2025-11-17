@@ -116,7 +116,7 @@ export default function RecentMessagesSection() {
 
   return (
     <section className="w-full bg-white py-4 sm:py-6 md:py-8 lg:py-12 px-3 sm:px-4 md:px-6 lg:px-8 pb-12 sm:pb-16 md:pb-20">
-      <div className="max-w-7xl mx-auto">
+      <div className="w-full mx-auto">
         {/* Header Section */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-4 sm:mb-6 md:mb-8 lg:mb-8 gap-3 sm:gap-4 lg:gap-4">
           <h2 className="font-anton font-normal text-xl sm:text-2xl md:text-3xl lg:text-[40px] text-black leading-[112%] tracking-normal capitalize">Recent Messages</h2>
@@ -135,7 +135,7 @@ export default function RecentMessagesSection() {
         {/* Messages Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-3">
           {messages.map((message) => (
-            <div key={message.id} className="bg-white rounded-xl shadow-lg overflow-hidden w-full max-w-sm mx-auto sm:max-w-none sm:mx-0 lg:w-[380px] lg:mx-0 h-auto sm:h-[450px] lg:h-[500px]">
+            <div key={message.id} className="bg-white rounded-xl shadow-lg overflow-hidden w-full mx-auto sm:mx-0 sm:max-w-none lg:w-[380px] lg:mx-0">
               {/* Banner Section - Using the healing meeting image */}
               <div className="relative h-[250px] sm:h-[300px] lg:h-[350px] overflow-hidden">
                 {/* Background Image */}
