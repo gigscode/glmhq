@@ -9,8 +9,9 @@ const HeroSection = () => {
             className='w-full min-h-[500px] sm:min-h-[400px] lg:max-h-[700px] xl:max-h-[600px] bg-[#181818] bg-cover bg-center flex justify-center items-center px-2 sm:px-4 md:px-0'
             style={{
                 backgroundImage: `url(${image.heroBg.src})`,
-                height: 'calc(var(--vh, 1vh) * 90)',
-                maxHeight: 'calc(var(--vh, 1vh) * 90)'
+                // Use dynamic viewport units for consistent mobile height without JS hacks
+                height: 'min(90vh, 90dvh)',
+                maxHeight: 'min(90vh, 90dvh)',
             }}
         >
             <div className='w-full px-2 sm:px-4 md:px-5 h-full flex flex-col justify-center text-center items-center mx-auto gap-3 sm:gap-4 md:gap-2'>

@@ -4,7 +4,6 @@ import "./android-fixes.css";
 import Footer from "@/components/Footer";
 import NavBar from "./components/NavBar";
 import PWARegister from "./components/PWARegister";
-import ViewportFix from "./components/ViewportFix";
 import { anton, inter } from "./fonts";
 
 export const metadata: Metadata = {
@@ -61,7 +60,6 @@ export default function RootLayout({
       </head>
       <body className="antialiased">
         <PWARegister />
-        <ViewportFix />
         <NavBar />
         {children}
         <Footer />

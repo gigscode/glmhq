@@ -1,4 +1,4 @@
-const CACHE_NAME = 'glm-v1';
+const CACHE_NAME = 'glm-v2';
 const urlsToCache = [
   '/',
   '/manifest.json',

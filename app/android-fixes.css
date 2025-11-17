@@ -1,248 +1,38 @@
-/* Android-specific fixes for UI/UX consistency */
+/* Minimal, scoped Android-specific fixes to avoid layout divergence */
 
-/* Critical: Force hardware acceleration on Android */
-* {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-perspective: 1000;
-  perspective: 1000;
-}
-
-/* Fix for Android Chrome's dynamic viewport height with address bar */
+/* Ensure full-height body on Android WebKit browsers */
 @supports (-webkit-touch-callout: none) {
+  html {
+    height: -webkit-fill-available;
+  }
+
   body {
     min-height: -webkit-fill-available;
   }
 }
 
-/* Android Chrome rendering optimization */
-body {
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  -webkit-font-smoothing: subpixel-antialiased;
-}
-
-/* Ensure fixed positioning works correctly on Android */
-nav[class*="fixed"] {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-}
-
-/* Fix for Android font rendering */
-body,
-input,
-textarea,
-button,
-select {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-smoothing: antialiased;
-}
-
-/* Fix for Android touch events */
-button,
-a,
-[role="button"] {
-  touch-action: manipulation;
-  -webkit-user-select: none;
-  user-select: none;
-}
-
-/* Fix for Android input zoom */
+/* Prevent input zoom on Android when focusing text fields */
 input,
 textarea,
 select {
   font-size: 16px !important;
 }
 
-/* Fix for Android overflow scrolling */
-.overflow-y-auto,
-.overflow-auto,
-[class*="overflow"] {
-  -webkit-overflow-scrolling: touch;
-  overflow-scrolling: touch;
+/* Improve tap behavior without affecting layout */
+button,
+a,
+[role="button"] {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
-/* Fix for Android image rendering */
-img {
-  -webkit-user-drag: none;
-  user-drag: none;
-  -webkit-touch-callout: none;
-}
-
-/* Fix for Android dialog/modal positioning */
-[role="dialog"],
-[data-radix-dialog-content] {
-  position: fixed;
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
-}
-
-/* Fix for Android safe area insets */
+/* Preserve nav safe-area padding on devices with notches */
 @supports (padding: max(0px)) {
-  body {
-    padding-left: max(0px, env(safe-area-inset-left));
-    padding-right: max(0px, env(safe-area-inset-right));
-  }
-  
   nav[class*="fixed"] {
     padding-left: max(0px, env(safe-area-inset-left));
     padding-right: max(0px, env(safe-area-inset-right));
   }
 }
-
-/* Fix for Android hardware acceleration */
-.transition,
-[class*="transition"] {
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
-  will-change: transform;
-}
-
-/* Fix for Android flexbox issues */
-.flex,
-[class*="flex"] {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-}
-
-/* Fix for Android SVG rendering */
-svg {
-  shape-rendering: geometricPrecision;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-}
-
-/* Fix for Android button appearance - only reset appearance, not styles */
-button {
-  -webkit-appearance: button;
-  appearance: button;
-}
-
-/* Fix for Android link tap delay */
-a {
-  -webkit-tap-highlight-color: transparent;
-  tap-highlight-color: transparent;
-}
-
-/* Fix for Android viewport units */
-.h-screen,
-[class*="h-screen"] {
-  height: 100vh;
-  height: calc(var(--vh, 1vh) * 100);
-}
-
-/* Fix for Android position sticky */
-[class*="sticky"] {
-  position: -webkit-sticky;
-  position: sticky;
-}
-
-/* Fix for Android background image rendering */
-section[style*="backgroundImage"],
-div[style*="backgroundImage"],
-[class*="bg-cover"],
-[class*="bg-center"] {
-  -webkit-background-size: cover;
-  background-size: cover;
-  background-attachment: scroll;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-}
-
-/* Fix for Android text rendering in hero sections */
-h1, h2, h3, h4, h5, h6 {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-  font-smoothing: antialiased;
-}
-
-/* Fix for Android flexbox centering */
-.flex.items-center,
-.flex.justify-center {
-  -webkit-box-align: center;
-  -webkit-box-pack: center;
-}
-
-/* Ensure proper rendering on Android Chrome */
-html {
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
-}
-
-/* Fix for Android image loading */
-img {
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: crisp-edges;
-}
-
-/* Fix for Android section height */
-section {
-  position: relative;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-}
-
-/* Critical Android Chrome background rendering fix */
-@media screen and (-webkit-min-device-pixel-ratio: 0) {
-  section[style*="backgroundImage"] {
-    background-attachment: scroll !important;
-    -webkit-background-size: cover !important;
-    background-size: cover !important;
-    will-change: transform;
-  }
-}
-
-/* Android-specific font rendering for better visibility */
-@media only screen and (max-width: 768px) {
-  body {
-    -webkit-text-stroke: 0;
-    text-shadow: none;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    -webkit-text-stroke: 0;
-    text-shadow: none;
-    /* Prevent text overlap on Android */
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    hyphens: auto;
-  }
-  
-  /* Fix for text rendering issues */
-  p, span, div {
-    -webkit-text-stroke: 0;
-    text-shadow: none;
-  }
-}
-
-/* Fix for Android Chrome compositing layers */
-section,
-nav,
-header,
-footer {
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-
-/* Android-specific button fix to preserve Tailwind styles */
-button[class*="bg-"],
-button[class*="border"],
-button[class*="rounded"] {
-  -webkit-appearance: none;
-  appearance: none;
-  /* Preserve all other styles from Tailwind */
-}
-
 /* Fix for Android text selection */
 ::selection {
   background-color: rgba(255, 255, 255, 0.3);
