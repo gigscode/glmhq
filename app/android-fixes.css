@@ -203,13 +203,23 @@ section {
 /* Android-specific font rendering for better visibility */
 @media only screen and (max-width: 768px) {
   body {
-    -webkit-text-stroke: 0.45px rgba(0, 0, 0, 0.1);
-    text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+    -webkit-text-stroke: 0;
+    text-shadow: none;
   }
 
   h1, h2, h3, h4, h5, h6 {
     -webkit-text-stroke: 0;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    text-shadow: none;
+    /* Prevent text overlap on Android */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+  }
+  
+  /* Fix for text rendering issues */
+  p, span, div {
+    -webkit-text-stroke: 0;
+    text-shadow: none;
   }
 }
 
@@ -242,4 +252,44 @@ button[class*="rounded"] {
 ::-moz-selection {
   background-color: rgba(255, 255, 255, 0.3);
   color: inherit;
+}
+
+/* Critical: Prevent text overlap on Android */
+h1, h2, h3, h4, h5, h6, p, span, div {
+  /* Remove any fixed heights that cause overflow */
+  min-height: auto;
+  /* Ensure proper text wrapping */
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+/* Android-specific fix for Anton font rendering */
+.font-anton {
+  font-family: var(--font-anton), "Impact", "Arial Black", sans-serif;
+  letter-spacing: 0;
+  word-spacing: normal;
+  line-height: 1.2;
+  font-weight: 400;
+  /* Ensure font loads properly on Android */
+  font-display: swap;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Prevent fixed dimensions from causing text overlap on mobile */
+@media only screen and (max-width: 768px) {
+  [class*="w-["],
+  [class*="h-["] {
+    width: auto !important;
+    height: auto !important;
+    max-width: 100%;
+  }
+  
+  /* Allow responsive text sizing */
+  h1, h2, h3 {
+    width: 100% !important;
+    height: auto !important;
+  }
 }

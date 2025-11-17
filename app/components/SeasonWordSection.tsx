@@ -61,12 +61,14 @@ export default function SeasonWordSection() {
           </div>
         </div>
         {/* Text - appears second on mobile, first on desktop */}
-        <div className="flex-1 flex flex-col   w-full order-2 md:order-1">
-          <h3 className="font-anton font-normal text-[32px] leading-[112%]  text-[#1E1E1E] w-[294px] h-[72px]  mb-2 sm:mb-3 md:mb-4 sm:text-2xl md:text-3xl lg:text-4xl sm:font-extrabold sm:text-black sm:bg-transparent sm:w-auto sm:h-auto sm:font-satoshi sm:leading-tight text-left">HAVE YOU GIVEN YOUR<br/>LIFE TO JESUS?</h3>
-          <p className="font-satoshi font-normal text-base leading-[130%] text-black mb-3 sm:mb-4 md:mb-6 max-w-md  px-2 sm:px-0 sm:text-xs md:text-sm">
+        <div className="flex-1 flex flex-col w-full order-2 md:order-1 px-2 sm:px-0">
+          <h3 className="font-anton font-normal text-[28px] sm:text-[32px] leading-[120%] text-[#1E1E1E] mb-3 sm:mb-4 md:text-3xl lg:text-4xl md:font-satoshi md:font-extrabold md:leading-tight text-left">
+            HAVE YOU GIVEN YOUR LIFE TO JESUS?
+          </h3>
+          <p className="font-satoshi font-normal text-sm leading-[140%] text-black mb-4 sm:mb-5 md:mb-6 max-w-md md:text-base">
             Do you know the trumpet can sound anytime from now? God loves you so much and his arms are wide open to you..
           </p>
-          <Button variant="destructive" className="w-[231px] h-[45px] rounded-full px-5 font-semibold text-xs sm:text-sm md:text-[16px] shadow-md sm:w-auto sm:h-auto sm:px-6 sm:py-2.5 md:px-8 md:py-3">
+          <Button variant="destructive" className="rounded-full px-6 py-3 font-semibold text-sm md:text-base shadow-md w-fit">
             MAKE A DECISION FOR GOD
           </Button>
         </div>
@@ -84,11 +86,11 @@ export default function SeasonWordSection() {
           />
         </div>
         {/* Right Side: Text and Button */}
-        <div className="flex-1 flex flex-col md:items-center max-w-lg w-full">
-          <p className=" text-[20px] font-big-shoulders   font-bold text-[#170000] mb-3 sm:mb-4 md:mb-6 sm:text-lg md:text-2xl  md:font-satoshi  px-2 sm:px-0">
-            Do you desire spiritual growth?<br/>Intimacy with God? Spiritual fervency? AUXANO is the avenue God has designed for your growth..
+        <div className="flex-1 flex flex-col max-w-lg w-full px-2 sm:px-0">
+          <p className="text-lg font-big-shoulders font-bold text-[#170000] mb-4 sm:mb-5 md:mb-6 md:text-xl md:font-satoshi leading-[140%]">
+            Do you desire spiritual growth? Intimacy with God? Spiritual fervency? AUXANO is the avenue God has designed for your growth..
           </p>
-          <Button variant="destructive" className="w-[204px] h-[45px] rounded-full font-semibold text-xs sm:text-sm md:text-[16px] shadow-md sm:w-auto sm:h-auto sm:px-6 sm:py-2.5 md:py-3">
+          <Button variant="destructive" className="rounded-full px-6 py-3 font-semibold text-sm md:text-base shadow-md w-fit">
             REGISTER FOR AUXANO
           </Button>
         </div>
@@ -107,12 +109,12 @@ export default function SeasonWordSection() {
           </div>
         </div>
         {/* Right Side: Text and Button */}
-        <div className="flex-1 flex flex-col items-center sm:items-start justify-center w-full">
-          <h3 className="font-anton font-normal text-[32px] leading-[140%] tracking-normal text-[#1E1E1E] mb-2 sm:mb-3 md:mb-4 md:text-[48px] md:leading-[112%] md:w-[487px] md:h-[270px]  sm:text-left px-2 sm:px-0">
-            Behold, I will make thee<br/>a new sharp threshing<br/>instrument having teeth:<br/>thou shalt thresh the<br/>mountains, and..
+        <div className="flex-1 flex flex-col items-center sm:items-start justify-center w-full px-2 sm:px-0">
+          <h3 className="font-anton font-normal text-[28px] sm:text-[32px] leading-[130%] tracking-normal text-[#1E1E1E] mb-3 sm:mb-4 md:text-[40px] lg:text-[48px] md:leading-[120%] text-center sm:text-left">
+            Behold, I will make thee a new sharp threshing instrument having teeth: thou shalt thresh the mountains, and..
           </h3>
-          <p className="text-xs sm:text-sm md:text-base text-black mb-3 sm:mb-4 md:mb-6 text-center sm:text-left px-2 sm:px-0">God has given us a vision..</p>
-          <button className="border border-black rounded-full px-5 py-2 sm:px-6 sm:py-2.5 md:px-8 md:py-3 font-semibold text-black hover:bg-black hover:text-white transition text-xs sm:text-sm md:text-base">READ THE VISION</button>
+          <p className="text-sm md:text-base text-black mb-4 sm:mb-5 md:mb-6 text-center sm:text-left">God has given us a vision..</p>
+          <button className="border border-black rounded-full px-6 py-3 font-semibold text-black hover:bg-black hover:text-white transition text-sm md:text-base w-fit">READ THE VISION</button>
         </div>
       </div>
     </section>

@@ -15,7 +15,7 @@ const HeroSection = () => {
         >
             <div className='w-full px-2 sm:px-4 md:px-5 h-full flex flex-col justify-center text-center items-center mx-auto gap-3 sm:gap-4 md:gap-2'>
                 {/* Mobile View - Three lines, uppercase */}
-                <h1 className='font-anton text-center font-normal text-white text-[64px] leading-[112%] tracking-normal uppercase md:text-[88px] md:capitalize md:w-[707px] md:h-[198px] w-[337px] h-[216px] mx-auto'>
+                <h1 className='font-anton text-center font-normal text-white text-[56px] sm:text-[64px] leading-[110%] tracking-normal uppercase md:text-[88px] md:capitalize md:max-w-[707px] mx-auto'>
                     <span className="md:hidden block">
                         JESUS LOVES
                         <br />

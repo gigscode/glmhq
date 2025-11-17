@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import NavBar from "./components/NavBar";
 import PWARegister from "./components/PWARegister";
 import ViewportFix from "./components/ViewportFix";
+import { anton, inter } from "./fonts";
 
 export const metadata: Metadata = {
   title: "GLM HQ",
@@ -43,8 +44,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${anton.variable} ${inter.variable}`}>
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
