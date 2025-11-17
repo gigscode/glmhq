@@ -96,8 +96,8 @@ export default function PWATestPage() {
         if (!manifestData.icons || manifestData.icons.length === 0) {
           errors.push("Manifest missing icons");
         } else {
-          const has192 = manifestData.icons.some((icon) => icon.sizes.includes("192"));
-          const has512 = manifestData.icons.some((icon) => icon.sizes.includes("512"));
+          const has192 = manifestData.icons.some((icon: ManifestIcon) => icon.sizes.includes("192"));
+          const has512 = manifestData.icons.some((icon: ManifestIcon) => icon.sizes.includes("512"));
           newStatus.icons = has192 && has512;
           if (!has192) errors.push("Manifest missing 192x192 icon");
           if (!has512) errors.push("Manifest missing 512x512 icon");
