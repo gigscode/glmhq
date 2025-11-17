@@ -2,6 +2,27 @@
 
 import { useEffect, useState } from "react";
 
+interface ManifestIcon {
+  src: string;
+  sizes: string;
+  type: string;
+  purpose?: string;
+}
+
+interface ManifestData {
+  name?: string;
+  short_name?: string;
+  start_url?: string;
+  display?: string;
+  icons?: ManifestIcon[];
+  [key: string]: unknown;
+}
+
+interface BeforeInstallPromptEvent extends Event {
+  prompt: () => Promise<void>;
+  userChoice: Promise<{ outcome: "accepted" | "dismissed" }>;
+}
+
 interface PWAStatus {
   https: boolean;
   manifest: boolean;
@@ -9,7 +30,7 @@ interface PWAStatus {
   icons: boolean;
   installable: boolean;
   installed: boolean;
-  manifestData: any;
+  manifestData: ManifestData | null;
   errors: string[];
 }
 
@@ -24,15 +45,15 @@ export default function PWATestPage() {
     manifestData: null,
     errors: [],
   });
-  const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
+  const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
 
   useEffect(() => {
     checkPWAStatus();
 
     // Listen for beforeinstallprompt event
-    const handleBeforeInstallPrompt = (e: any) => {
+    const handleBeforeInstallPrompt = (e: Event) => {
       e.preventDefault();
-      setDeferredPrompt(e);
+      setDeferredPrompt(e as BeforeInstallPromptEvent);
       setStatus((prev) => ({ ...prev, installable: true }));
       console.log("beforeinstallprompt event fired - PWA is installable!");
     };
@@ -75,8 +96,8 @@ export default function PWATestPage() {
         if (!manifestData.icons || manifestData.icons.length === 0) {
           errors.push("Manifest missing icons");
         } else {
-          const has192 = manifestData.icons.some((icon: any) => icon.sizes.includes("192"));
-          const has512 = manifestData.icons.some((icon: any) => icon.sizes.includes("512"));
+          const has192 = manifestData.icons.some((icon) => icon.sizes.includes("192"));
+          const has512 = manifestData.icons.some((icon) => icon.sizes.includes("512"));
           newStatus.icons = has192 && has512;
           if (!has192) errors.push("Manifest missing 192x192 icon");
           if (!has512) errors.push("Manifest missing 512x512 icon");
@@ -174,7 +195,7 @@ export default function PWATestPage() {
           <h2 className="text-lg font-semibold text-blue-900 mb-2">Troubleshooting:</h2>
           <ul className="list-disc list-inside space-y-1 text-blue-800">
             <li>All status items above should show green checkmarks</li>
-            <li>If "Installable" is red, the install prompt won't appear</li>
+            <li>If &quot;Installable&quot; is red, the install prompt won&apos;t appear</li>
             <li>Chrome requires you to visit the site at least once before showing the prompt</li>
             <li>If already installed, uninstall first to test again</li>
             <li>Check browser console (F12) for detailed errors</li>
