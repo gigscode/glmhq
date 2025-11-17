@@ -6,8 +6,12 @@ import { MessageCircle } from 'lucide-react'
 const HeroSection = () => {
     return (
         <section
-            className='w-full h-[90vh] min-h-[500px] sm:min-h-[400px] max-h-[90vh] lg:max-h-[700px] xl:max-h-[600px] bg-[#181818] bg-cover bg-center flex justify-center items-center px-2 sm:px-4 md:px-0'
-            style={{ backgroundImage: `url(${image.heroBg.src})` }}
+            className='w-full min-h-[500px] sm:min-h-[400px] lg:max-h-[700px] xl:max-h-[600px] bg-[#181818] bg-cover bg-center flex justify-center items-center px-2 sm:px-4 md:px-0'
+            style={{
+                backgroundImage: `url(${image.heroBg.src})`,
+                height: 'calc(var(--vh, 1vh) * 90)',
+                maxHeight: 'calc(var(--vh, 1vh) * 90)'
+            }}
         >
             <div className='w-full px-2 sm:px-4 md:px-5 h-full flex flex-col justify-center text-center items-center mx-auto gap-3 sm:gap-4 md:gap-2'>
                 {/* Mobile View - Three lines, uppercase */}

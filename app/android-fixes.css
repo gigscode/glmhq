@@ -1,10 +1,25 @@
 /* Android-specific fixes for UI/UX consistency */
 
+/* Critical: Force hardware acceleration on Android */
+* {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+}
+
 /* Fix for Android Chrome's dynamic viewport height with address bar */
 @supports (-webkit-touch-callout: none) {
   body {
     min-height: -webkit-fill-available;
   }
+}
+
+/* Android Chrome rendering optimization */
+body {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-font-smoothing: subpixel-antialiased;
 }
 
 /* Ensure fixed positioning works correctly on Android */
@@ -104,12 +119,10 @@ svg {
   transform: translateZ(0);
 }
 
-/* Fix for Android button appearance */
+/* Fix for Android button appearance - only reset appearance, not styles */
 button {
-  -webkit-appearance: none;
-  appearance: none;
-  border: none;
-  background: none;
+  -webkit-appearance: button;
+  appearance: button;
 }
 
 /* Fix for Android link tap delay */
@@ -129,4 +142,104 @@ a {
 [class*="sticky"] {
   position: -webkit-sticky;
   position: sticky;
+}
+
+/* Fix for Android background image rendering */
+section[style*="backgroundImage"],
+div[style*="backgroundImage"],
+[class*="bg-cover"],
+[class*="bg-center"] {
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-attachment: scroll;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+/* Fix for Android text rendering in hero sections */
+h1, h2, h3, h4, h5, h6 {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-smoothing: antialiased;
+}
+
+/* Fix for Android flexbox centering */
+.flex.items-center,
+.flex.justify-center {
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+}
+
+/* Ensure proper rendering on Android Chrome */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Fix for Android image loading */
+img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Fix for Android section height */
+section {
+  position: relative;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+/* Critical Android Chrome background rendering fix */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  section[style*="backgroundImage"] {
+    background-attachment: scroll !important;
+    -webkit-background-size: cover !important;
+    background-size: cover !important;
+    will-change: transform;
+  }
+}
+
+/* Android-specific font rendering for better visibility */
+@media only screen and (max-width: 768px) {
+  body {
+    -webkit-text-stroke: 0.45px rgba(0, 0, 0, 0.1);
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    -webkit-text-stroke: 0;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* Fix for Android Chrome compositing layers */
+section,
+nav,
+header,
+footer {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* Android-specific button fix to preserve Tailwind styles */
+button[class*="bg-"],
+button[class*="border"],
+button[class*="rounded"] {
+  -webkit-appearance: none;
+  appearance: none;
+  /* Preserve all other styles from Tailwind */
+}
+
+/* Fix for Android text selection */
+::selection {
+  background-color: rgba(255, 255, 255, 0.3);
+  color: inherit;
+}
+
+::-moz-selection {
+  background-color: rgba(255, 255, 255, 0.3);
+  color: inherit;
 }

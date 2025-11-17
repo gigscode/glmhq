@@ -31,8 +31,10 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
+  minimumScale: 1,
   userScalable: true,
-  themeColor: "#3a0a0a",
+  themeColor: "#181818",
+  viewportFit: "cover",
 };
 
 export default function RootLayout({
@@ -49,6 +51,10 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-mobile-web-app-title" content="GLM HQ" />
         <meta name="format-detection" content="telephone=no" />
+        {/* Android-specific meta tags */}
+        <meta name="theme-color" content="#181818" />
+        <meta name="color-scheme" content="light" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
       </head>
       <body className="antialiased">
         <PWARegister />
