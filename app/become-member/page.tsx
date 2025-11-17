@@ -1,11 +1,9 @@
 import Link from "next/link";
 import { image } from "../constants/image";
-import NavBar from "../components/NavBar";
 
 export default function BecomeMemberPage() {
   return (
     <div className="min-h-screen bg-white">
-      <NavBar />
       <div className="relative min-h-screen pt-[72px]">
         {/* Background Image with Overlay */}
         <div 
