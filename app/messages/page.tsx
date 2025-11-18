@@ -1,6 +1,5 @@
 import MessagesPageHero from '../components/MessagesPageHero';
 import RecentMessagesSection from '../components/RecentMessagesSection';
-import Footer from '@/components/Footer';
 
 export default function MessagesPage() {
   return (
@@ -9,7 +8,6 @@ export default function MessagesPage() {
         <MessagesPageHero />
         <RecentMessagesSection />
       </main>
-      <Footer />
     </div>
   );
 }
