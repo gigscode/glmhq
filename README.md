@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# GLM HQ
 
-## Getting Started
+The official homepage for **Gospel Labour Ministry** led by Apostle Joseph Ibrahim. This Progressive Web App (PWA) serves as the central hub for ministry updates, messages, and community engagement.
 
-First, run the development server:
+## About
+
+GLM HQ provides members and visitors with:
+
+- **Latest Messages**: Access recent sermons and teachings from Apostle Joseph Ibrahim
+- **Upcoming Programs**: Stay informed about ministry events and gatherings
+- **Season Word**: Receive timely spiritual guidance and prophetic direction
+- **Installable App**: Install on any device for a native app-like experience
+
+## Features
+
+- **Progressive Web App**: Install on mobile and desktop devices
+- **Offline Support**: Access content even without an internet connection
+- **Responsive Design**: Optimized for all screen sizes and devices
+- **Fast Performance**: Built with Next.js for optimal speed and SEO
+
+## Tech Stack
+
+- Next.js 15 with App Router
+- TypeScript
+- Tailwind CSS
+- PWA capabilities with service worker
+- Deployed on Vercel
+
+## Development
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+# Install dependencies
+pnpm install
+
+# Run development server
 pnpm dev
-# or
-bun dev
+
+# Build for production
+pnpm build
+
+# Start production server
+pnpm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the app locally.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deployment
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This app is deployed on Vercel. Any push to the main branch automatically triggers a new deployment.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Gospel Labour Ministry** - Spreading the Gospel through faith, labor, and dedication.
