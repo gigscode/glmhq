@@ -26,13 +26,8 @@ a,
   -webkit-tap-highlight-color: transparent;
 }
 
-/* Preserve nav safe-area padding on devices with notches */
-@supports (padding: max(0px)) {
-  nav[class*="fixed"] {
-    padding-left: max(0px, env(safe-area-inset-left));
-    padding-right: max(0px, env(safe-area-inset-right));
-  }
-}
+/* Safe-area padding removed to allow full-width navbar on mobile */
+/* If needed for devices with notches, apply padding to inner content instead of nav element */
 /* Fix for Android text selection */
 ::selection {
   background-color: rgba(255, 255, 255, 0.3);
@@ -69,16 +64,17 @@ h1, h2, h3, h4, h5, h6, p, span, div {
 }
 
 /* Prevent fixed dimensions from causing text overlap on mobile */
+/* Exclude nav elements to preserve navbar full width */
 @media only screen and (max-width: 768px) {
-  [class*="w-["],
-  [class*="h-["] {
+  [class*="w-["]:not(nav):not(nav *),
+  [class*="h-["]:not(nav):not(nav *) {
     width: auto !important;
     height: auto !important;
     max-width: 100%;
   }
-  
+
   /* Allow responsive text sizing */
-  h1, h2, h3 {
+  h1:not(nav *), h2:not(nav *), h3:not(nav *) {
     width: 100% !important;
     height: auto !important;
   }
