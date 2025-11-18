@@ -3,18 +3,23 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 
+// Type definition for the BeforeInstallPromptEvent
+interface BeforeInstallPromptEvent extends Event {
+  prompt: () => Promise<void>;
+  userChoice: Promise<{ outcome: "accepted" | "dismissed" }>;
+}
+
 // Handles the `beforeinstallprompt` event so we can explicitly show
 // an install button on Android when the PWA criteria are met.
 export default function PWAInstallPrompt() {
-  const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
+  const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     const handler = (e: Event) => {
-      // Some browsers still use the old BeforeInstallPromptEvent type
-      // which isn't in the DOM lib, so we keep this typed as Event/any.
+      // Cast to BeforeInstallPromptEvent since the browser event isn't in standard DOM types
       e.preventDefault();
-      setDeferredPrompt(e);
+      setDeferredPrompt(e as BeforeInstallPromptEvent);
       setVisible(true);
     };
 
@@ -31,7 +36,7 @@ export default function PWAInstallPrompt() {
     if (typeof window === "undefined") return;
     const isStandalone =
       window.matchMedia?.("(display-mode: standalone)").matches ||
-      (window.navigator as any).standalone === true;
+      (window.navigator as { standalone?: boolean }).standalone === true;
     if (isStandalone) {
       setVisible(false);
       setDeferredPrompt(null);
