@@ -135,7 +135,7 @@ export default function RecentMessagesSection() {
         {/* Messages Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 lg:gap-6 xl:gap-8">
           {messages.map((message) => (
-            <div key={message.id} className="bg-white rounded-xl shadow-lg overflow-hidden w-full max-w-[500px] mx-auto sm:max-w-none">
+            <div key={message.id} className="bg-white rounded-xl shadow-lg overflow-hidden w-full">
               {/* Banner Section - Using the healing meeting image */}
               <div className="relative w-full h-[200px] sm:h-[220px] md:h-[240px] lg:h-[260px] xl:h-[280px] overflow-hidden bg-gray-100">
                 {/* Background Image */}
