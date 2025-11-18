@@ -50,7 +50,9 @@ const NavBar = () => {
         >
             <div className="w-full flex items-center justify-between md:px-6 lg:px-8">
                 <div className="pl-4 md:pl-0">
-                    <Image src={GlmLogo} alt="glm-logo" width={100} height={40} className="h-auto w-auto max-w-[100px] sm:max-w-none" />
+                    <Link href="/" className="cursor-pointer">
+                        <Image src={GlmLogo} alt="glm-logo" width={100} height={40} className="h-auto w-auto max-w-[100px] sm:max-w-none" />
+                    </Link>
                 </div>
                 {/* Desktop Nav */}
                 <div className="hidden md:flex items-center">
@@ -94,7 +96,9 @@ const NavBar = () => {
                             <div className="flex flex-col h-full overflow-y-auto px-6 py-6">
                                 {/* Header with Logo and Close Button */}
                                 <div className="flex items-start justify-between mb-8 flex-shrink-0">
-                                    <Image src={GlmLogo} alt="glm-logo" width={120} height={48} className="h-auto" />
+                                    <Link href="/" className="cursor-pointer" onClick={() => setIsMobileMenuOpen(false)}>
+                                        <Image src={GlmLogo} alt="glm-logo" width={120} height={48} className="h-auto" />
+                                    </Link>
                                     <Button 
                                         variant="ghost" 
                                         size="icon" 

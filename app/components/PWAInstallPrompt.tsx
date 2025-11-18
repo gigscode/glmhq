@@ -14,17 +14,14 @@ export default function PWAInstallPrompt() {
       // Some browsers still use the old BeforeInstallPromptEvent type
       // which isn't in the DOM lib, so we keep this typed as Event/any.
       e.preventDefault();
-      // @ts-expect-error - non-standard event
       setDeferredPrompt(e);
       setVisible(true);
     };
 
     // Only run in browsers that support the event
-    // @ts-expect-error - beforeinstallprompt is not in the standard Window type
     window.addEventListener("beforeinstallprompt", handler);
 
     return () => {
-      // @ts-expect-error - beforeinstallprompt is not in the standard Window type
       window.removeEventListener("beforeinstallprompt", handler);
     };
   }, []);
@@ -34,7 +31,6 @@ export default function PWAInstallPrompt() {
     if (typeof window === "undefined") return;
     const isStandalone =
       window.matchMedia?.("(display-mode: standalone)").matches ||
-      // @ts-expect-error - iOS specific
       (window.navigator as any).standalone === true;
     if (isStandalone) {
       setVisible(false);
@@ -45,9 +41,7 @@ export default function PWAInstallPrompt() {
   const handleInstallClick = async () => {
     if (!deferredPrompt) return;
 
-    // @ts-expect-error - non-standard API
     deferredPrompt.prompt();
-    // @ts-expect-error - non-standard API
     const choiceResult = await deferredPrompt.userChoice;
 
     if (choiceResult.outcome === "accepted") {

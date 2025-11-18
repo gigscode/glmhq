@@ -115,59 +115,59 @@ export default function RecentMessagesSection() {
   ];
 
   return (
-    <section className="w-full bg-white py-4 sm:py-6 md:py-8 lg:py-12 px-3 sm:px-4 md:px-6 lg:px-8 pb-12 sm:pb-16 md:pb-20">
-      <div className="w-full mx-auto">
+    <section className="w-full bg-white py-6 sm:py-8 md:py-10 lg:py-12 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+      <div className="w-full max-w-[1400px] mx-auto">
         {/* Header Section */}
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-4 sm:mb-6 md:mb-8 lg:mb-8 gap-3 sm:gap-4 lg:gap-4">
-          <h2 className="font-anton font-normal text-xl sm:text-2xl md:text-3xl lg:text-[40px] text-black leading-[112%] tracking-normal capitalize">Recent Messages</h2>
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-6 sm:mb-8 md:mb-10 lg:mb-12 gap-4 lg:gap-6">
+          <h2 className="font-anton font-normal text-2xl sm:text-3xl md:text-4xl lg:text-[40px] xl:text-[44px] text-black leading-tight capitalize">Recent Messages</h2>
           
           {/* Search Bar */}
-          <div className="relative w-full sm:w-full md:w-[400px] lg:w-[590px] h-[48px] sm:h-[56px] md:h-[64px] lg:h-[72px]">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 sm:w-5 sm:h-5 lg:w-5 lg:h-5" />
+          <div className="relative w-full lg:w-auto lg:min-w-[400px] xl:min-w-[500px]">
+            <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
             <input
               type="text"
               placeholder="Search by message title, program, or preacher"
-              className="w-full h-full pl-10 sm:pl-12 lg:pl-10 pr-4 bg-[#F8F8F8] border border-[#C5C5C5] rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm sm:text-base lg:text-sm"
+              className="w-full h-[56px] md:h-[60px] lg:h-[64px] pl-12 pr-4 bg-[#F8F8F8] border border-[#C5C5C5] rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm md:text-base placeholder:text-gray-400"
             />
           </div>
         </div>
 
         {/* Messages Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 lg:gap-6 xl:gap-8">
           {messages.map((message) => (
-            <div key={message.id} className="bg-white rounded-xl shadow-lg overflow-hidden w-full mx-auto sm:mx-0 sm:max-w-none lg:w-[380px] lg:mx-0">
+            <div key={message.id} className="bg-white rounded-xl shadow-lg overflow-hidden w-full max-w-[500px] mx-auto sm:max-w-none">
               {/* Banner Section - Using the healing meeting image */}
-              <div className="relative h-[250px] sm:h-[300px] lg:h-[350px] overflow-hidden">
+              <div className="relative w-full h-[200px] sm:h-[220px] md:h-[240px] lg:h-[260px] xl:h-[280px] overflow-hidden bg-gray-100">
                 {/* Background Image */}
                 <Image 
                   src={healingMeetingImg} 
-                  alt="Healing Meeting" 
+                  alt="Message thumbnail" 
                   fill
-                  className="object-cover sm:object-cover lg:object-contain"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover"
+                  priority={message.id <= 3}
                 />
               </div>
 
               {/* Message Details */}
-              <div className="p-3 sm:p-4 lg:p-4 h-auto sm:h-[150px] lg:h-[150px] flex flex-col justify-between">
-                <div className="mb-3 sm:mb-0 lg:mb-0">
-                  <h4 className="font-anton font-normal text-sm sm:text-base lg:text-[16px] text-black mb-2 sm:mb-1 lg:mb-1 leading-[112%] tracking-normal">{message.title}</h4>
-                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center lg:flex-row lg:justify-between lg:items-center gap-1 sm:gap-0 lg:gap-0 mb-3 sm:mb-3 lg:mb-3 w-full sm:w-auto lg:w-[350px] h-auto sm:h-4 lg:h-4">
-                    <span className="font-satoshi font-medium text-xs sm:text-sm lg:text-[14px] text-gray-600 leading-[112%] tracking-normal">{message.preacher}</span>
-                    <span className="font-satoshi font-medium text-xs sm:text-sm lg:text-[14px] text-gray-500 leading-[112%] tracking-normal text-right">{message.date}</span>
+              <div className="p-4 sm:p-5 md:p-6 flex flex-col min-h-[160px] sm:min-h-[170px]">
+                <div className="flex-grow mb-4">
+                  <h4 className="font-anton font-normal text-base sm:text-lg md:text-xl text-black mb-2 leading-tight line-clamp-2">{message.title}</h4>
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1 sm:gap-2 mb-3">
+                    <span className="font-satoshi font-medium text-sm text-gray-600 truncate">{message.preacher}</span>
+                    <span className="font-satoshi font-medium text-sm text-gray-500 whitespace-nowrap">{message.date}</span>
                   </div>
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex gap-2 mt-auto">
-                  <button className="flex-1 bg-green-600 hover:bg-green-700 text-white rounded-lg px-2 sm:px-3 lg:px-3 py-2 sm:py-2 lg:py-2 flex items-center justify-center gap-1 font-semibold transition-colors text-xs sm:text-sm lg:text-sm">
-                    <Download className="w-3 h-3 sm:w-3 sm:h-3 lg:w-3 lg:h-3" />
-                    <span className=" sm:inline lg:inline">DOWNLOAD</span>
-                    {/* <span className="sm:hidden lg:hidden">DL</span> */}
+                <div className="flex gap-3 mt-auto">
+                  <button className="flex-1 bg-green-600 hover:bg-green-700 text-white rounded-lg px-4 py-2.5 flex items-center justify-center gap-2 font-semibold transition-colors text-sm">
+                    <Download className="w-4 h-4" />
+                    <span>DOWNLOAD</span>
                   </button>
-                  <button className="flex-1 border border-black text-black hover:bg-black hover:text-white rounded-lg px-2 sm:px-3 lg:px-3 py-2 sm:py-2 lg:py-2 flex items-center justify-center gap-1 font-semibold transition-colors text-xs sm:text-sm lg:text-sm">
-                    <Play className="w-3 h-3 sm:w-3 sm:h-3 lg:w-3 lg:h-3" />
-                    <span className=" sm:inline lg:inline">PLAY</span>
-                    {/* <span className="sm:hidden lg:hidden">▶</span> */}
+                  <button className="flex-1 border-2 border-black text-black hover:bg-black hover:text-white rounded-lg px-4 py-2.5 flex items-center justify-center gap-2 font-semibold transition-colors text-sm">
+                    <Play className="w-4 h-4" />
+                    <span>PLAY</span>
                   </button>
                 </div>
               </div>
