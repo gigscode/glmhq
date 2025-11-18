@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Search, Download, Play } from "lucide-react";
-import healingMeetingImg from '../assets/images/Rectangle 722.png';
+import healingMeetingImg from '../assets/images/Rectangle-722.png';
 
 export default function RecentMessagesSection() {
   const messages = [

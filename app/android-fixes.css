@@ -64,10 +64,11 @@ h1, h2, h3, h4, h5, h6, p, span, div {
 }
 
 /* Prevent fixed dimensions from causing text overlap on mobile */
-/* Exclude nav elements to preserve navbar full width */
+/* Exclude nav, form inputs, buttons, and layout containers to preserve component layouts */
 @media only screen and (max-width: 768px) {
-  [class*="w-["]:not(nav):not(nav *),
-  [class*="h-["]:not(nav):not(nav *) {
+  /* Only target text elements, exclude all layout/interactive elements */
+  [class*="w-["]:not(nav):not(nav *):not(input):not(textarea):not(select):not(button):not([class*="relative"]):not([class*="absolute"]):not([class*="flex"]):not([class*="grid"]),
+  [class*="h-["]:not(nav):not(nav *):not(input):not(textarea):not(select):not(button):not([class*="relative"]):not([class*="absolute"]):not([class*="flex"]):not([class*="grid"]) {
     width: auto !important;
     height: auto !important;
     max-width: 100%;
