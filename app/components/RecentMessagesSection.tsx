@@ -155,7 +155,7 @@ export default function RecentMessagesSection() {
                   <h4 className="font-anton font-normal text-base sm:text-lg md:text-xl text-black mb-2 leading-tight line-clamp-2">{message.title}</h4>
                   <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1 sm:gap-2 mb-3">
                     <span className="font-satoshi font-medium text-sm text-gray-600 truncate">{message.preacher}</span>
-                    <span className="font-satoshi font-medium text-sm text-gray-500 whitespace-nowrap">{message.date}</span>
+                    <span className="font-satoshi font-medium text-end text-sm text-gray-500 whitespace-nowrap">{message.date}</span>
                   </div>
                 </div>
 
