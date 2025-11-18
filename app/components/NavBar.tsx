@@ -48,8 +48,10 @@ const NavBar = () => {
             className={`w-full h-[72px] py-[12px] flex items-center fixed top-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md' : 'bg-[#181818]'
                 }`}
         >
-            <div className="w-full max-w-6xl mx-auto flex items-center justify-between px-3 md:px-4">
-                <Image src={GlmLogo} alt="glm-logo" width={100} height={40} className="h-auto w-auto max-w-[100px] sm:max-w-none" />
+            <div className="w-full flex items-center justify-between md:px-6 lg:px-8">
+                <div className="pl-4 md:pl-0">
+                    <Image src={GlmLogo} alt="glm-logo" width={100} height={40} className="h-auto w-auto max-w-[100px] sm:max-w-none" />
+                </div>
                 {/* Desktop Nav */}
                 <div className="hidden md:flex items-center">
                     <ul className="flex items-center justify-between w-full gap-8">
@@ -74,16 +76,17 @@ const NavBar = () => {
                     </Link>
                 </div>
                 {/* Mobile Hamburger */}
-                <div className="md:hidden flex items-center">
+                <div className="md:hidden flex items-center pr-4 md:pr-0">
                     <Dialog open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
                         <DialogTrigger asChild>
                             <Button variant="ghost" size="icon" aria-label="Open menu">
                                 <Menu className={isScrolled ? 'text-black' : 'text-white'} />
                             </Button>
                         </DialogTrigger>
+
                         <DialogContent 
                             showCloseButton={false}
-                            className="bg-[#181818] border-none p-0 !top-0 !left-0 !translate-x-0 !translate-y-0 !w-full !max-w-[320px] !h-screen !max-h-screen !rounded-none !shadow-xl data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:slide-out-to-left data-[state=open]:slide-in-from-left"
+                            className="bg-[#181818] border-none p-0 !top-0 !left-0 !translate-x-0 !translate-y-0 !w-full !max-w-full !h-screen !max-h-screen !rounded-none !shadow-xl data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:slide-out-to-left data-[state=open]:slide-in-from-left"
                         >
                             <VisuallyHidden>
                                 <DialogTitle>Navigation Menu</DialogTitle>
