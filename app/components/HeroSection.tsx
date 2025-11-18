@@ -44,19 +44,17 @@ const HeroSection = () => {
                     </span>
                 </p>
                 <Button 
-                    className='flex items-center gap-[10px] mt-4 sm:mt-8 md:mt-10 w-[180px] sm:w-[208px] h-[48px] sm:h-[52px]'
+                    className='flex items-center gap-[10px] mt-4 sm:mt-8 md:mt-10 w-auto h-[48px] sm:h-[52px] px-5 sm:px-6'
                     style={{
                         borderRadius: '2000px',
                         border: '1px solid #FFFFFF',
                         background: 'rgba(255, 255, 255, 0.09)',
                         paddingTop: '14px',
-                        paddingRight: '20px',
                         paddingBottom: '14px',
-                        paddingLeft: '20px',
                     }}
                 >
-                    <MessageCircle className="w-5 h-5 text-[#ffffff]" />
-                    <span className="text-[#ffffff] font-medium uppercase text-sm">CONNECT WITH US</span>
+                    <MessageCircle className="w-5 h-4 text-[#ffffff] flex-shrink-0" />
+                    <span className="text-[#ffffff] font-medium uppercase text-sm whitespace-nowrap">CONNECT WITH US</span>
                 </Button>
             </div>
         </section>
