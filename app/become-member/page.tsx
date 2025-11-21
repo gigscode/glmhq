@@ -55,7 +55,7 @@ export default function BecomeMemberPage() {
             {/* Log In Link - At Bottom, Centered */}
             <div className="text-center text-base text-black mt-12 pt-8">
               Are You A Personnel?{" "}
-              <Link href="/login" className="text-[#D00002] font-semibold underline hover:no-underline">
+              <Link href="/signin" className="text-[#D00002] font-semibold underline hover:no-underline">
                 Log In
               </Link>
             </div>
