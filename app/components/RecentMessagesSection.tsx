@@ -1,126 +1,16 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Search, Download, Play } from "lucide-react";
-import healingMeetingImg from '../assets/images/Rectangle-722.png';
+import { messages } from "../constants/messages";
 
 export default function RecentMessagesSection() {
-  const messages = [
-    {
-      id: 1,
-      title: "Overcoming Discouragement (Part 2)",
-      preacher: "Apostle Joseph Ibrahim",
-      date: "Aug 31st, '25"
-    },
-    {
-      id: 2,
-      title: "Overcoming Discouragement (Part 2)",
-      preacher: "Apostle Joseph Ibrahim",
-      date: "Aug 24th, '25"
-    },
-    {
-      id: 3,
-      title: "Overcoming Discouragement (Part 2)",
-      preacher: "Apostle Joseph Ibrahim",
-      date: "Aug 17th, '25"
-    },
-    {
-      id: 4,
-      title: "Overcoming Discouragement (Part 2)",
-      preacher: "Apostle Joseph Ibrahim",
-      date: "Aug 31st, '25"
-    },
-    {
-      id: 5,
-      title: "Overcoming Discouragement (Part 2)",
-      preacher: "Apostle Joseph Ibrahim",
-      date: "Aug 24th, '25"
-    },
-    {
-      id: 6,
-      title: "Overcoming Discouragement (Part 2)",
-      preacher: "Apostle Joseph Ibrahim",
-      date: "Aug 17th, '25"
-    },
-    {
-      id: 7,
-      title: "Overcoming Discouragement (Part 2)",
-      preacher: "Apostle Joseph Ibrahim",
-      date: "Aug 31st, '25"
-    },
-    {
-      id: 8,
-      title: "Overcoming Discouragement (Part 2)",
-      preacher: "Apostle Joseph Ibrahim",
-      date: "Aug 24th, '25"
-    },
-    {
-      id: 9,
-      title: "Overcoming Discouragement (Part 2)",
-      preacher: "Apostle Joseph Ibrahim",
-      date: "Aug 17th, '25"
-    },
-    {
-      id: 10,
-      title: "Overcoming Discouragement (Part 2)",
-      preacher: "Apostle Joseph Ibrahim",
-      date: "Aug 31st, '25"
-    },
-    {
-      id: 11,
-      title: "Overcoming Discouragement (Part 2)",
-      preacher: "Apostle Joseph Ibrahim",
-      date: "Aug 24th, '25"
-    },
-    {
-      id: 12,
-      title: "Overcoming Discouragement (Part 2)",
-      preacher: "Apostle Joseph Ibrahim",
-      date: "Aug 17th, '25"
-    },
-    {
-      id: 13,
-      title: "Overcoming Discouragement (Part 2)",
-      preacher: "Apostle Joseph Ibrahim",
-      date: "Aug 31st, '25"
-    },
-    {
-      id: 14,
-      title: "Overcoming Discouragement (Part 2)",
-      preacher: "Apostle Joseph Ibrahim",
-      date: "Aug 24th, '25"
-    },
-    {
-      id: 15,
-      title: "Overcoming Discouragement (Part 2)",
-      preacher: "Apostle Joseph Ibrahim",
-      date: "Aug 17th, '25"
-    },
-    {
-      id: 16,
-      title: "Overcoming Discouragement (Part 2)",
-      preacher: "Apostle Joseph Ibrahim",
-      date: "Aug 31st, '25"
-    },
-    {
-      id: 17,
-      title: "Overcoming Discouragement (Part 2)",
-      preacher: "Apostle Joseph Ibrahim",
-      date: "Aug 24th, '25"
-    },
-    {
-      id: 18,
-      title: "Overcoming Discouragement (Part 2)",
-      preacher: "Apostle Joseph Ibrahim",
-      date: "Aug 17th, '25"
-    }
-  ];
-
   return (
     <section className="w-full bg-white py-6 sm:py-8 md:py-10 lg:py-12 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
       <div className="w-full max-w-[1400px] mx-auto">
         {/* Header Section */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-6 sm:mb-8 md:mb-10 lg:mb-12 gap-4 lg:gap-6">
           <h2 className="font-anton font-normal text-2xl sm:text-3xl md:text-4xl lg:text-[40px] xl:text-[44px] text-black leading-tight capitalize">Recent Messages</h2>
-          
+
           {/* Search Bar */}
           <div className="relative w-full lg:w-auto lg:min-w-[400px] xl:min-w-[500px]">
             <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
@@ -139,9 +29,9 @@ export default function RecentMessagesSection() {
               {/* Banner Section - Using the healing meeting image */}
               <div className="relative w-full h-[200px] sm:h-[220px] md:h-[240px] lg:h-[260px] xl:h-[280px] overflow-hidden bg-gray-100">
                 {/* Background Image */}
-                <Image 
-                  src={healingMeetingImg} 
-                  alt="Message thumbnail" 
+                <Image
+                  src={message.image}
+                  alt="Message thumbnail"
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="object-cover object-center"
@@ -161,14 +51,18 @@ export default function RecentMessagesSection() {
 
                 {/* Action Buttons */}
                 <div className="flex gap-3 mt-auto">
-                  <button className="flex-1 bg-green-600 hover:bg-green-700 text-white rounded-[50px] px-4 py-2.5 flex items-center justify-center gap-2 font-semibold transition-colors text-sm">
+                  <a
+                    href={message.audioUrl}
+                    download
+                    className="flex-1 bg-green-600 hover:bg-green-700 text-white rounded-[50px] px-4 py-2.5 flex items-center justify-center gap-2 font-semibold transition-colors text-sm"
+                  >
                     <Download className="w-4 h-4" />
                     <span>DOWNLOAD</span>
-                  </button>
-                  <button className="flex-1 border-1 border-black text-black hover:bg-black hover:text-white rounded-[50px] px-4 py-2.5 flex items-center justify-center gap-2 font-semibold transition-colors text-sm">
+                  </a>
+                  <Link href={`/messages/${message.id}`} className="flex-1 border-1 border-black text-black hover:bg-black hover:text-white rounded-[50px] px-4 py-2.5 flex items-center justify-center gap-2 font-semibold transition-colors text-sm">
                     <Play className="w-4 h-4 fill-black" />
                     <span>PLAY</span>
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>

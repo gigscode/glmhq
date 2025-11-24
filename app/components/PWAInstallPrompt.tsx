@@ -20,7 +20,15 @@ export default function PWAInstallPrompt() {
       // Cast to BeforeInstallPromptEvent since the browser event isn't in standard DOM types
       e.preventDefault();
       setDeferredPrompt(e as BeforeInstallPromptEvent);
-      setVisible(true);
+
+      // Check if device is desktop (screen width >= 1024px OR desktop user agent)
+      const isDesktopWidth = window.innerWidth >= 1024;
+      const isDesktopUA = /Windows|Macintosh|Linux/i.test(navigator.userAgent) && !/Mobile|Android/i.test(navigator.userAgent);
+
+      // Only show prompt if NOT desktop
+      if (!isDesktopWidth && !isDesktopUA) {
+        setVisible(true);
+      }
     };
 
     // Only run in browsers that support the event
