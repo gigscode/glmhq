@@ -10,7 +10,7 @@ interface Message {
     title: string;
     preacher: string;
     date: string;
-    image: any;
+    image: string | { src: string; height: number; width: number; blurDataURL?: string; };
     audioUrl: string;
 }
 

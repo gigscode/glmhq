@@ -4,9 +4,9 @@ import { messages } from "../../constants/messages";
 import MessagePlayer from "../../components/MessagePlayer";
 
 interface PageProps {
-    params: {
+    params: Promise<{
         id: string;
-    };
+    }>;
 }
 
 export function generateStaticParams() {
@@ -15,8 +15,9 @@ export function generateStaticParams() {
     }));
 }
 
-export default function MessagePage({ params }: PageProps) {
-    const messageId = parseInt(params.id);
+export default async function MessagePage({ params }: PageProps) {
+    const resolvedParams = await params;
+    const messageId = parseInt(resolvedParams.id);
     const message = messages.find((m) => m.id === messageId);
 
     if (!message) {
