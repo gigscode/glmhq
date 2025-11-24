@@ -125,17 +125,16 @@ export default function BecomeMemberPage() {
               </div>
             </form>
 
-          
+
           </div>
 
-            {/* Log In Link - At Bottom, Centered */}
-            <div className="text-center text-sm text-black mt-6">
-              Are You A Personnel?{" "}
-              <Link href="/signin" className="text-[#D00002] font-semibold underline hover:no-underline">
-                Log in
-              </Link>
-            </div>
-        </div>
+          {/* Log In Link - At Bottom, Centered */}
+          <div className="text-center text-sm text-black mt-6">
+            Are You A Personnel?{" "}
+            <Link href="/signin" className="text-[#D00002] font-semibold underline hover:no-underline">
+              Log in
+            </Link>
+          </div>
         </div>
       </div>
     </div>
