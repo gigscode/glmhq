@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import devotionalImg from '../assets/images/daily-devotional.svg';
 import testimonyImg from '../assets/images/testimonies.svg';
@@ -25,7 +26,14 @@ export default function SeasonWordSection() {
           <div className="p-3 sm:p-4 md:p-6 flex flex-col flex-1">
             <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-[#2B1818] font-satoshi mb-2">Daily Devotional</h3>
             <p className="text-xs sm:text-sm md:text-base text-[#2B1818] mb-3 sm:mb-4 md:mb-6">Start your day in a lovely way, fellowship with God through our 3-minutes inspiring devotionals.</p>
-            <button className="border border-black rounded-full px-3 py-1.5 sm:px-4 sm:py-2 md:px-6 md:py-2 font-medium text-black hover:bg-black hover:text-white transition self-start text-xs sm:text-sm md:text-base">FOLLOW DAILY DEVOTIONAL</button>
+            <a
+              href="https://t.me/aletheiadailydevotional"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border border-black rounded-full px-3 py-1.5 sm:px-4 sm:py-2 md:px-6 md:py-2 font-medium text-black hover:bg-black hover:text-white transition self-start text-xs sm:text-sm md:text-base inline-block text-center"
+            >
+              FOLLOW DAILY DEVOTIONAL
+            </a>
           </div>
         </div>
         {/* Testimonies Card */}
@@ -90,8 +98,10 @@ export default function SeasonWordSection() {
           <p className="text-lg font-big-shoulders font-bold text-[#170000] mb-4 sm:mb-5 md:mb-6 md:text-xl md:font-satoshi leading-[140%]">
             Do you desire spiritual growth? Intimacy with God? Spiritual fervency? AUXANO is the avenue God has designed for your growth..
           </p>
-          <Button variant="destructive" className="rounded-full px-6 py-3 font-semibold text-sm md:text-base shadow-md w-fit">
-            REGISTER FOR AUXANO
+          <Button variant="destructive" asChild className="rounded-full px-6 py-3 font-semibold text-sm md:text-base shadow-md w-fit">
+            <Link href="/auxano-centers" rel="noopener noreferrer">
+              REGISTER FOR AUXANO
+            </Link>
           </Button>
         </div>
       </div>
@@ -114,9 +124,16 @@ export default function SeasonWordSection() {
             Behold, I will make thee a new sharp threshing instrument having teeth: thou shalt thresh the mountains, and..
           </h3>
           <p className="text-sm md:text-base text-black mb-4 sm:mb-5 md:mb-6 text-center sm:text-left">God has given us a vision..</p>
-          <button className="border border-black rounded-full px-6 py-3 font-semibold text-black hover:bg-black hover:text-white transition text-sm md:text-base w-fit">READ THE VISION</button>
+          <button className="border border-black rounded-full px-6 py-3 font-semibold text-black hover:bg-black hover:text-white transition text-sm md:text-base w-fit">
+
+            <Link href="/about" rel="noopener noreferrer">
+              READ THE VISION
+            </Link>
+
+
+          </button>
         </div>
       </div>
     </section>
   );
-} 
+}
