@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
+
+
+import auxanoHeader from "../assets/images/auxano_centers_header.png";
 
 export default function GivingPage() {
     const [activeTab, setActiveTab] = useState<"naira" | "foreign">("naira");
@@ -19,7 +21,7 @@ export default function GivingPage() {
                 <div
                     className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                     style={{
-                        backgroundImage: `url(https://placehold.co/1920x500/cccccc/666666?text=Giving+Hero)`
+                        backgroundImage: `url(${auxanoHeader.src})`
                     }}
                 >
                     {/* Overlay for better text readability */}
@@ -55,8 +57,8 @@ export default function GivingPage() {
                                 <button
                                     onClick={() => setActiveTab("naira")}
                                     className={`px-6 py-3 font-bold text-sm md:text-base rounded-md transition-colors ${activeTab === "naira"
-                                            ? "bg-[#D00002] text-white"
-                                            : "bg-white text-[#D00002] border-2 border-[#D00002]"
+                                        ? "bg-[#D00002] text-white"
+                                        : "bg-white text-[#D00002] border-2 border-[#D00002]"
                                         }`}
                                 >
                                     NAIRA ACCOUNTS
@@ -64,8 +66,8 @@ export default function GivingPage() {
                                 <button
                                     onClick={() => setActiveTab("foreign")}
                                     className={`px-6 py-3 font-bold text-sm md:text-base rounded-md transition-colors ${activeTab === "foreign"
-                                            ? "bg-[#D00002] text-white"
-                                            : "bg-white text-[#D00002] border-2 border-[#D00002]"
+                                        ? "bg-[#D00002] text-white"
+                                        : "bg-white text-[#D00002] border-2 border-[#D00002]"
                                         }`}
                                 >
                                     FOREIGN ACCOUNTS
