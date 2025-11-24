@@ -1,59 +1,129 @@
 import Link from "next/link";
-import { image } from "../constants/image";
+import Image from "next/image";
+import becomeMemberImage from "../assets/images/becomemember.png";
 
 export default function BecomeMemberPage() {
   return (
-    <div className="min-h-screen bg-white">
-      <div className="relative min-h-screen pt-[72px]">
-        {/* Background Image with Overlay */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${image.heroBg.src})` }}
-        >
-          <div className="absolute inset-0 bg-black/40"></div>
+    <div className="min-h-screen bg-white pt-[72px]">
+      <div className="relative min-h-[calc(100vh-72px)]">
+        {/* Top Half - Image Background */}
+        <div className="absolute top-0 left-0 right-0 h-1/2">
+          <Image
+            src={becomeMemberImage}
+            alt="Become a Member"
+            fill
+            className="object-cover"
+            priority
+          />
         </div>
 
-        {/* Content */}
+        {/* Bottom Half - White Background */}
+        <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-white"></div>
+
+        {/* Form Card - Overlays both sections */}
         <div className="relative z-10 min-h-[calc(100vh-72px)] flex items-center justify-center px-4 py-8 md:py-12">
-          {/* Become A Member Form Card - Large White Overlay */}
-          <div className="bg-white rounded-2xl shadow-2xl w-full max-w-2xl p-12 md:p-16">
+          <div className="bg-white rounded-2xl shadow-2xl w-full max-w-lg p-8 md:p-10">
             {/* Title */}
-            <h1 className="text-4xl md:text-5xl font-bold text-black mb-12 text-left">
+            <h1 className="text-3xl md:text-4xl font-bold text-black mb-8 text-center">
               Become A Member
             </h1>
 
-            {/* Form - Only Three Input Fields */}
-            <form className="space-y-6 mb-8">
+            {/* Form */}
+            <form className="space-y-5 mb-8">
               {/* Full Name Input */}
               <div>
+                <label className="block text-sm text-gray-600 mb-1.5">Full name</label>
                 <input
                   type="text"
                   placeholder="Full name"
-                  className="w-full px-5 py-4 rounded-lg border border-gray-300 bg-white text-black placeholder-gray-400 text-base focus:outline-none focus:border-gray-400 transition-colors"
+                  className="w-full px-4 py-3 rounded-md border border-gray-200 bg-gray-50 text-black placeholder-gray-400 text-sm focus:outline-none focus:border-gray-300 focus:bg-white transition-colors"
                 />
               </div>
 
               {/* Phone Number Input */}
               <div>
+                <label className="block text-sm text-gray-600 mb-1.5">Phone number</label>
                 <input
                   type="tel"
                   placeholder="Phone number"
-                  className="w-full px-5 py-4 rounded-lg border border-gray-300 bg-white text-black placeholder-gray-400 text-base focus:outline-none focus:border-gray-400 transition-colors"
+                  className="w-full px-4 py-3 rounded-md border border-gray-200 bg-gray-50 text-black placeholder-gray-400 text-sm focus:outline-none focus:border-gray-300 focus:bg-white transition-colors"
                 />
               </div>
 
-              {/* Address Input */}
+              {/* Email Input */}
               <div>
+                <label className="block text-sm text-gray-600 mb-1.5">Email</label>
+                <input
+                  type="email"
+                  placeholder="Email address"
+                  className="w-full px-4 py-3 rounded-md border border-gray-200 bg-gray-50 text-black placeholder-gray-400 text-sm focus:outline-none focus:border-gray-300 focus:bg-white transition-colors"
+                />
+              </div>
+
+              {/* Current Address Input */}
+              <div>
+                <label className="block text-sm text-gray-600 mb-1.5">Current address</label>
                 <input
                   type="text"
-                  placeholder="Address"
-                  className="w-full px-5 py-4 rounded-lg border border-gray-300 bg-white text-black placeholder-gray-400 text-base focus:outline-none focus:border-gray-400 transition-colors"
+                  placeholder="Current address"
+                  className="w-full px-4 py-3 rounded-md border border-gray-200 bg-gray-50 text-black placeholder-gray-400 text-sm focus:outline-none focus:border-gray-300 focus:bg-white transition-colors"
                 />
+              </div>
+
+              {/* Occupation / School Input with CAPTCHA */}
+              <div>
+                <label className="block text-sm text-gray-600 mb-1.5">Occupation / School</label>
+                <div className="relative">
+                  <input
+                    type="text"
+                    placeholder="Occupation"
+                    className="w-full px-4 py-3 rounded-md border border-gray-200 bg-gray-50 text-black placeholder-gray-400 text-sm focus:outline-none focus:border-gray-300 focus:bg-white transition-colors"
+                  />
+                  {/* CAPTCHA Badge */}
+
+                </div>
+              </div>
+
+              {/* Meeting Attendance Question */}
+              <div className="pt-2">
+                <label className="block text-sm text-gray-700 mb-3">
+                  Have you attended any of our meetings before?
+                </label>
+                <div className="flex items-center gap-6">
+                  <label className="flex items-center gap-2 cursor-pointer">
+                    <input
+                      type="radio"
+                      name="attended"
+                      value="yes"
+                      className="w-4 h-4 text-red-600 border-gray-300 focus:ring-red-500"
+                    />
+                    <span className="text-sm text-gray-700">Yes</span>
+                  </label>
+                  <label className="flex items-center gap-2 cursor-pointer">
+                    <input
+                      type="radio"
+                      name="attended"
+                      value="no"
+                      className="w-4 h-4 text-red-600 border-gray-300 focus:ring-red-500"
+                    />
+                    <span className="text-sm text-gray-700">No</span>
+                  </label>
+                </div>
+              </div>
+
+              {/* Submit Button */}
+              <div className="pt-4">
+                <button
+                  type="submit"
+                  className="w-full bg-[#D00002] hover:bg-[#B00002] text-white font-semibold py-3.5 px-6 rounded-full transition-colors duration-200 text-base"
+                >
+                  Submit
+                </button>
               </div>
             </form>
 
             {/* Log In Link - At Bottom, Centered */}
-            <div className="text-center text-base text-black mt-12 pt-8">
+            <div className="text-center text-sm text-black mt-6">
               Are You A Personnel?{" "}
               <Link href="/signin" className="text-[#D00002] font-semibold underline hover:no-underline">
                 Log In
