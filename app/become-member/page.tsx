@@ -34,6 +34,7 @@ export default function BecomeMemberPage() {
               <div>
                 <label className="block text-sm text-gray-600 mb-1.5">Full name</label>
                 <input
+                  id="fullName"
                   type="text"
                   placeholder="Full name"
                   className="w-full px-4 py-3 rounded-md border border-gray-200 bg-gray-50 text-black placeholder-gray-400 text-sm focus:outline-none focus:border-gray-300 focus:bg-white transition-colors"
@@ -44,6 +45,7 @@ export default function BecomeMemberPage() {
               <div>
                 <label className="block text-sm text-gray-600 mb-1.5">Phone number</label>
                 <input
+                  id="phoneNumber"
                   type="tel"
                   placeholder="Phone number"
                   className="w-full px-4 py-3 rounded-md border border-gray-200 bg-gray-50 text-black placeholder-gray-400 text-sm focus:outline-none focus:border-gray-300 focus:bg-white transition-colors"
@@ -64,6 +66,7 @@ export default function BecomeMemberPage() {
               <div>
                 <label className="block text-sm text-gray-600 mb-1.5">Current address</label>
                 <input
+                  id="address"
                   type="text"
                   placeholder="Current address"
                   className="w-full px-4 py-3 rounded-md border border-gray-200 bg-gray-50 text-black placeholder-gray-400 text-sm focus:outline-none focus:border-gray-300 focus:bg-white transition-colors"
@@ -122,14 +125,17 @@ export default function BecomeMemberPage() {
               </div>
             </form>
 
+          
+          </div>
+
             {/* Log In Link - At Bottom, Centered */}
             <div className="text-center text-sm text-black mt-6">
               Are You A Personnel?{" "}
               <Link href="/signin" className="text-[#D00002] font-semibold underline hover:no-underline">
-                Log In
+                Log in
               </Link>
             </div>
-          </div>
+        </div>
         </div>
       </div>
     </div>

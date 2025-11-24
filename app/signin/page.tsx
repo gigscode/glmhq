@@ -8,16 +8,16 @@ export default function SignInPage() {
       <div className="relative min-h-screen pt-[72px]">
         {/* Background Image with Overlay */}
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          className="absolute inset-x-0 top-0 h-[50vh] py-28 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${image.heroBg.src})` }}
         >
           <div className="absolute inset-0 bg-black/40" />
         </div>
 
         {/* Content */}
-        <div className="relative z-10 min-h-[calc(100vh-72px)] flex items-center justify-center px-4 py-8 md:py-12">
-          <div className="w-full max-w-2xl rounded-2xl bg-white p-12 shadow-2xl md:p-16">
-            <h1 className="text-left font-anton text-4xl font-bold text-black md:text-5xl mb-12">
+        <div className="relative z-10 min-h-[calc(100vh-72px)] flex items-center justify-center px-4 py-8 md:py-40">
+          <div className="w-full max-w-xl rounded-2xl bg-white p-12 shadow-2xl md:p-16">
+            <h1 className="text-center font-anton text-4xl font-bold text-black md:text-5xl mb-12">
               SIGN IN{" "}
               <span className="text-[20px] font-normal text-gray-900">
                 (Personnel only)
