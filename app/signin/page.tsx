@@ -50,7 +50,7 @@ export default function SignInPage() {
                   <label className="block text-sm text-gray-600 mb-1.5">Password</label>
                   <input
                     type="password"
-                    placeholder="Password"
+                    placeholder="xxxxxxxx"
                     className="w-full px-4 py-3 rounded-md border border-gray-200 bg-gray-50 text-black placeholder-gray-400 text-sm focus:outline-none focus:border-gray-300 focus:bg-white transition-colors"
                   />
                 </div>
