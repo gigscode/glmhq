@@ -22,9 +22,10 @@ export default function BecomeMemberPage() {
 
         {/* Form Card - Overlays both sections */}
         <div className="relative z-10 min-h-[calc(100vh-72px)] flex items-center justify-center px-4 py-8 md:py-12">
-          <div className="bg-white rounded-2xl shadow-2xl w-full max-w-lg p-8 md:p-10">
+        <div className="max-4xl-mx-auto">
+            <div className="bg-white rounded-2xl shadow-2xl w-full max-w-lg p-8 md:p-10">
             {/* Title */}
-            <h1 className="text-3xl md:text-4xl font-bold text-black mb-8 text-center">
+            <h1 className="text-3xl md:text-[24px] font-anton font-bold text-black mb-8 text-center">
               Become A Member
             </h1>
 
@@ -125,19 +126,21 @@ export default function BecomeMemberPage() {
               </div>
             </form>
 
-
+          
           </div>
 
-          {/* Log In Link - At Bottom, Centered */}
-          <div className="text-center text-sm text-black mt-6">
-            Are You A Personnel?{" "}
-            <Link href="/signin" className="text-[#D00002] font-semibold underline hover:no-underline">
-              Log in
-            </Link>
-          </div>
+            {/* Log In Link - At Bottom, Centered */}
+            <div className="text-center font-anton text-[24px] text-sm text-black mt-6">
+              Are You A Personnel?{" "}
+              <Link href="/signin" className="text-[#D00002] font-semibold underline hover:no-underline">
+                Log in
+              </Link>
+            </div>
+        </div>
+        </div>
         </div>
       </div>
-    </div>
+
   );
 }
 
