@@ -12,15 +12,15 @@ const NAV_LINKS = [
     { label: 'ABOUT US', href: '/' },
     { label: 'MEETINGS', href: '/' },
     { label: 'MESSAGES', href: '/messages' },
-    { label: 'AUXANO CENTERS', href: '/' },
-    { label: 'GIVING', href: '/' },
+    { label: 'AUXANO CENTERS', href: '/auxano-centers' },
+    { label: 'GIVING', href: '/giving' },
 ]
 
 const MOBILE_NAV_LINKS = [
     { label: 'MEETINGS', href: '/' },
     { label: 'MESSAGES', href: '/messages' },
-    { label: 'AUXANO CENTERS', href: '/' },
-    { label: 'GIVING', href: '/' },
+    { label: 'AUXANO CENTERS', href: '/auxano-centers' },
+    { label: 'GIVING', href: '/giving' },
 ]
 
 const NavBar = () => {
@@ -151,10 +151,10 @@ const NavBar = () => {
                                 {/* Social Media Icons - Bottom, Evenly Spaced */}
                                 <div className="flex items-center justify-between mt-auto pt-6 flex-shrink-0">
                                     <a href="https://t.me/glmchannel" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300 transition" aria-label="Telegram">
-    <svg width="30" height="25" viewBox="0 0 35 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M34.8965 2.67132L29.6153 27.5776C29.2165 29.3351 28.1778 29.7726 26.7015 28.9451L18.654 23.0151L14.7715 26.7501C14.3415 27.1801 13.9828 27.5388 13.154 27.5388L13.7328 19.3438L28.6465 5.86757C29.2953 5.29007 28.5053 4.96882 27.639 5.54757L9.20155 17.1576L1.26405 14.6726C-0.462203 14.1338 -0.493453 12.9463 1.62405 12.1176L32.6703 0.156325C34.1078 -0.382425 35.3653 0.475075 34.8965 2.67132Z" fill="#FFFFFF"/>
-</svg>
-</a>
+                                        <svg width="30" height="25" viewBox="0 0 35 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M34.8965 2.67132L29.6153 27.5776C29.2165 29.3351 28.1778 29.7726 26.7015 28.9451L18.654 23.0151L14.7715 26.7501C14.3415 27.1801 13.9828 27.5388 13.154 27.5388L13.7328 19.3438L28.6465 5.86757C29.2953 5.29007 28.5053 4.96882 27.639 5.54757L9.20155 17.1576L1.26405 14.6726C-0.462203 14.1338 -0.493453 12.9463 1.62405 12.1176L32.6703 0.156325C34.1078 -0.382425 35.3653 0.475075 34.8965 2.67132Z" fill="#FFFFFF" />
+                                        </svg>
+                                    </a>
                                     <a href="https://www.facebook.com/glmhq" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300 transition" aria-label="Facebook">
                                         <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-label="Facebook">
                                             <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
@@ -170,7 +170,7 @@ const NavBar = () => {
                                             <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" />
                                         </svg>
                                     </a>
-                                   
+
                                 </div>
                             </div>
                         </DialogContent>

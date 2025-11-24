@@ -1,3 +1,5 @@
+"use client";
+
 import { image } from "../constants/image";
 
 export default function SignInPage() {
