@@ -137,9 +137,9 @@ export default function AuxanoCentersPage() {
                                     </div>
 
                                     {/* Ask for Directions Button */}
-                                    <button className="w-full flex items-center justify-center gap-2 bg-white border-2 border-black text-black font-semibold py-2.5 px-4 rounded-full hover:bg-black hover:text-white transition-colors duration-200">
+                                    <button className="w-3/5 md:w-auto flex items-center justify-center gap-2 bg-white border-2 border-black text-black font-semibold py-2.5 px-4 rounded-full hover:bg-black hover:text-white transition-colors duration-200 whitespace-nowrap">
                                         <svg
-                                            className="w-4 h-4"
+                                            className="w-4 h-4 flex-shrink-0"
                                             fill="currentColor"
                                             viewBox="0 0 20 20"
                                         >
