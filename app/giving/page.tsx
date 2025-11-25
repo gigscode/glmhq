@@ -56,7 +56,7 @@ export default function GivingPage() {
                             <div className="flex gap-4 mb-8">
                                 <button
                                     onClick={() => setActiveTab("naira")}
-                                    className={`px-6 py-3 font-bold text-sm md:text-base rounded-md transition-colors ${activeTab === "naira"
+                                    className={`px-6 py-3 font-bold text-sm md:text-base rounded-full transition-colors ${activeTab === "naira"
                                         ? "bg-[#D00002] text-white"
                                         : "bg-white text-[#D00002] border-2 border-[#D00002]"
                                         }`}
@@ -65,7 +65,7 @@ export default function GivingPage() {
                                 </button>
                                 <button
                                     onClick={() => setActiveTab("foreign")}
-                                    className={`px-6 py-3 font-bold text-sm md:text-base rounded-md transition-colors ${activeTab === "foreign"
+                                    className={`px-6 py-3 font-bold text-sm md:text-base rounded-full transition-colors ${activeTab === "foreign"
                                         ? "bg-[#D00002] text-white"
                                         : "bg-white text-[#D00002] border-2 border-[#D00002]"
                                         }`}
@@ -95,7 +95,7 @@ export default function GivingPage() {
                                             <span className="font-bold text-2xl md:text-3xl text-black">2046121493</span>
                                             <button
                                                 onClick={() => copyToClipboard("2046121493")}
-                                                className="flex items-center gap-2 px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded-md transition-colors"
+                                                className="flex items-center gap-2 px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded-full transition-colors"
                                             >
                                                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                                                     <path d="M8 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z" />
@@ -124,7 +124,7 @@ export default function GivingPage() {
                                             <span className="font-bold text-2xl md:text-3xl text-black">2027597217</span>
                                             <button
                                                 onClick={() => copyToClipboard("2027597217")}
-                                                className="flex items-center gap-2 px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded-md transition-colors"
+                                                className="flex items-center gap-2 px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded-full transition-colors"
                                             >
                                                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                                                     <path d="M8 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z" />
@@ -156,7 +156,7 @@ export default function GivingPage() {
                                                     <span className="font-bold text-xl text-blue-600">011183822</span>
                                                     <button
                                                         onClick={() => copyToClipboard("011183822")}
-                                                        className="flex items-center gap-1 px-3 py-1 bg-gray-200 hover:bg-gray-300 rounded-md transition-colors"
+                                                        className="flex items-center gap-1 px-3 py-1 bg-gray-200 hover:bg-gray-300 rounded-full transition-colors"
                                                     >
                                                         <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                                                             <path d="M8 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z" />
@@ -172,7 +172,7 @@ export default function GivingPage() {
                                                     <span className="font-bold text-xl text-blue-600">FBNINGLA</span>
                                                     <button
                                                         onClick={() => copyToClipboard("FBNINGLA")}
-                                                        className="flex items-center gap-1 px-3 py-1 bg-gray-200 hover:bg-gray-300 rounded-md transition-colors"
+                                                        className="flex items-center gap-1 px-3 py-1 bg-gray-200 hover:bg-gray-300 rounded-full transition-colors"
                                                     >
                                                         <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                                                             <path d="M8 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z" />
@@ -193,7 +193,7 @@ export default function GivingPage() {
                                                     <span className="font-bold text-2xl text-black">2046211169</span>
                                                     <button
                                                         onClick={() => copyToClipboard("2046211169")}
-                                                        className="flex items-center gap-2 px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded-md transition-colors"
+                                                        className="flex items-center gap-2 px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded-full transition-colors"
                                                     >
                                                         <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                                                             <path d="M8 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z" />
@@ -211,7 +211,7 @@ export default function GivingPage() {
                                                     <span className="font-bold text-2xl text-black">2046212939</span>
                                                     <button
                                                         onClick={() => copyToClipboard("2046212939")}
-                                                        className="flex items-center gap-2 px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded-md transition-colors"
+                                                        className="flex items-center gap-2 px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded-full transition-colors"
                                                     >
                                                         <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                                                             <path d="M8 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z" />
@@ -229,7 +229,7 @@ export default function GivingPage() {
                                                     <span className="font-bold text-2xl text-black">2046213084</span>
                                                     <button
                                                         onClick={() => copyToClipboard("2046213084")}
-                                                        className="flex items-center gap-2 px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded-md transition-colors"
+                                                        className="flex items-center gap-2 px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded-full transition-colors"
                                                     >
                                                         <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                                                             <path d="M8 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z" />
