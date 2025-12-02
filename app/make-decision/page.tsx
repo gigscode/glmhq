@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Image from "next/image";
 import becomeMemberImage from "../assets/images/becomemember.png";
 

@@ -52,7 +52,14 @@ export default function SeasonWordSection() {
           <div className="p-3 sm:p-4 md:p-6 flex flex-col flex-1">
             <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-[#2B1818] font-satoshi mb-2">Testimonies</h3>
             <p className="text-xs sm:text-sm md:text-base text-[#2B1818] mb-3 sm:mb-4 md:mb-6">God is doing wondrous things among us through his word from the mouth of his servant.</p>
-            <button className="border border-black rounded-full px-3 py-1.5 sm:px-4 sm:py-2 md:px-6 md:py-2 font-medium text-black hover:bg-black hover:text-white transition self-start text-xs sm:text-sm md:text-base">OPEN TESTIMONIES</button>
+            <Link 
+              href="https://t.me/glmtestimonies"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border border-black rounded-full px-3 py-1.5 sm:px-4 sm:py-2 md:px-6 md:py-2 font-medium text-black hover:bg-black hover:text-white transition self-start text-xs sm:text-sm md:text-base inline-block text-center"
+            >
+              OPEN TESTIMONIES
+            </Link>
           </div>
         </div>
       </div>
@@ -131,7 +138,7 @@ export default function SeasonWordSection() {
           <p className="text-sm md:text-base text-black mb-4 sm:mb-5 md:mb-6 text-center sm:text-left">God has given us a vision..</p>
           <button className="border border-black rounded-full px-6 py-3 font-semibold text-black hover:bg-black hover:text-white transition text-sm md:text-base w-fit">
 
-            <Link href="/about" rel="noopener noreferrer">
+            <Link href="/vision" rel="noopener noreferrer">
               READ THE VISION
             </Link>
 

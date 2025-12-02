@@ -43,7 +43,7 @@ export default function AboutPage() {
                         <div className="space-y-10 md:space-y-12">
                             {/* THE CHURCH */}
                             <div>
-                                <p className="mb-10">Gospel Labour Ministry is an Apostolic movement with a mandate to raise believers who are well equipped to represent God in different spheres of life. Here, there's no feeble one among us.
+                                <p className="mb-10">Gospel Labour Ministry is an Apostolic movement with a mandate to raise believers who are well equipped to represent God in different spheres of life. Here, there&apos;s no feeble one among us.
                                     We strongly believe spiritual growth and discipleship is a roadmap to the harvest God is sending us into. And God has found us worthy by his grace to send us into His harvest.
                                 </p>
 
@@ -51,7 +51,7 @@ export default function AboutPage() {
                                     THE CHURCH
                                 </h3>
                                 <p className="font-inter text-sm md:text-base text-gray-800 leading-relaxed">
-                                    We believe the church is God's ultimate plan for the time we live in. We're a church on a mission, and nothing can stop us. Just like the ark of Noah, the church is God's safe harbor for everyone. Irrespective of what people are facing outside this ark, God Has prepared a safe place to shelter men from the danger, wickedness and decay of the last days.
+                                    We believe the church is God&apos;s ultimate plan for the time we live in. We&apos;re a church on a mission, and nothing can stop us. Just like the ark of Noah, the church is God&apos;s safe harbor for everyone. Irrespective of what people are facing outside this ark, God Has prepared a safe place to shelter men from the danger, wickedness and decay of the last days.
                                 </p>
                                 <p className="font-inter text-sm md:text-base text-gray-800 leading-relaxed mt-3">
                                     <strong>This is Church....I Love it</strong>
@@ -65,7 +65,7 @@ export default function AboutPage() {
                             {/* GLM: GOD'S CHOICE */}
                             <div>
                                 <h3 className="font-anton text-base md:text-lg text-black uppercase mb-3 tracking-wide">
-                                    GLM: GOD'S CHOICE
+                                    GLM: GOD&apos;S CHOICE
                                 </h3>
                                 <p className="font-inter text-sm md:text-base text-gray-800 leading-relaxed">
                                     We are chosen by grace, appointed by love and sent into the ready harvest of God in these last days. God is simply doing His work through us. We are His new Sharp threshing instrument, with us, He is threshing mountains and beating them small.
@@ -82,7 +82,7 @@ export default function AboutPage() {
                                     THE WORD: OUR VERY LIFE
                                 </h3>
                                 <p className="font-inter text-sm md:text-base text-gray-800 leading-relaxed">
-                                    At GLM, we hold the word of God in high esteem and we believe that it is God's tool of making and working both in us and through us. Our ministry is that of the word and everything we do revolves round this.
+                                    At GLM, we hold the word of God in high esteem and we believe that it is God&apos;s tool of making and working both in us and through us. Our ministry is that of the word and everything we do revolves round this.
 
                                 </p>
                             </div>
@@ -93,7 +93,7 @@ export default function AboutPage() {
                                     WORSHIP
                                 </h3>
                                 <p className="font-inter text-sm md:text-base text-gray-800 leading-relaxed">
-                                    At GLM, worship is another great tool God Has given us to reach this generation. For us, worship is not just what we do, it's one of the major reasons why we are here, it's our life.
+                                    At GLM, worship is another great tool God Has given us to reach this generation. For us, worship is not just what we do, it&apos;s one of the major reasons why we are here, it&apos;s our life.
                                 </p>
                             </div>
 
@@ -103,7 +103,7 @@ export default function AboutPage() {
                                     THE LOVE OF GOD
                                 </h3>
                                 <p className="font-inter text-sm md:text-base text-gray-800 leading-relaxed">
-                                    If you say Gospel Labour Ministry means God Loves Me, you're right because one of the things we enjoy without reservations at GLM is the Love of God. God loves us so much and we know it!
+                                    If you say Gospel Labour Ministry means God Loves Me, you&apos;re right because one of the things we enjoy without reservations at GLM is the Love of God. God loves us so much and we know it!
                                 </p>
                                 <p className="mt-4">He calls</p>
                                 <p>He sends</p>
