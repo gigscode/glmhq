@@ -19,6 +19,7 @@ export default function SeasonWordSection() {
               src={devotionalImg}
               alt="Daily Devotional"
               fill
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover rounded-t-2xl"
               priority
             />
@@ -43,6 +44,7 @@ export default function SeasonWordSection() {
               src={testimonyImg}
               alt="Testimonies"
               fill
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover rounded-t-2xl"
               priority
             />
@@ -116,6 +118,7 @@ export default function SeasonWordSection() {
               src={sharpThreshingImg}
               alt="Sharp Threshing Instrument"
               fill
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover rounded-xl sm:rounded-2xl md:rounded-3xl"
             />
           </div>

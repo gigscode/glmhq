@@ -36,7 +36,7 @@ const UpcomingPgSection = () => {
                 {PROGRAMS.map((p,) => (
                     <div key={p.title} className="bg-[#F3F3F3] rounded-xl flex flex-col overflow-hidden">
                         <div className="w-full h-40 sm:h-48 relative">
-                            <Image src={p.img} alt={p.title} fill className="object-cover w-full h-full rounded-t-xl" />
+                            <Image src={p.img} alt={p.title} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover w-full h-full rounded-t-xl" />
                         </div>
                         <div className="p-3 sm:p-4 md:p-6 flex flex-col gap-2">
                             <span className="text-xs sm:text-xs font-inter text-[#181818] mb-1">{p.date}</span>
