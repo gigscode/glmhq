@@ -48,9 +48,11 @@ const UpcomingPgSection = () => {
                     </div>
                 ))}
             </div>
-            <Button className="mt-6 sm:mt-10 md:mt-12 bg-[#000000] text-white rounded-full px-5 py-3 sm:px-6 sm:py-4 md:px-8 md:py-5 text-sm sm:text-base md:text-lg flex items-center gap-2 shadow-md hover:bg-[#181818]/90">
-                <MapPin className="w-5 h-5" />
-                GET CHURCH ADDRESS
+            <Button asChild className="mt-6 sm:mt-10 md:mt-12 bg-[#000000] text-white rounded-full px-5 py-3 sm:px-6 sm:py-4 md:px-8 md:py-5 text-sm sm:text-base md:text-lg flex items-center gap-2 shadow-md hover:bg-[#181818]/90">
+                <a href="https://www.google.com/maps/place/Gospel+Labour+Ministry/@7.6476611,5.2275751,17z/data=!3m1!4b1!4m6!3m5!1s0x1047f00e7d3788d5:0x6f5d4c61c254e94d!8m2!3d7.6476611!4d5.23015!16s%2Fg%2F11pb1zl8yn?entry=ttu&g_ep=EgoyMDI1MTEyMy4xIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                    <MapPin className="w-5 h-5" />
+                    GET CHURCH ADDRESS
+                </a>
             </Button>
         </section>
     )
