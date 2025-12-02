@@ -6,6 +6,7 @@ import NavBar from "./components/NavBar";
 import PWARegister from "./components/PWARegister";
 import PWAInstallPrompt from "./components/PWAInstallPrompt";
 import TelegramButton from "./components/TelegramButton";
+import VersionChecker from "./components/VersionChecker";
 import { anton, inter } from "./fonts";
 
 export const metadata: Metadata = {
@@ -62,6 +63,7 @@ export default function RootLayout({
       </head>
       <body className="antialiased">
         <PWARegister />
+        <VersionChecker />
         <NavBar />
         {children}
         <Footer />

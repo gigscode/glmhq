@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node -e \"process.env.NEXT_PUBLIC_BUILD_ID=Date.now().toString()\" && next build",
+    "build:prod": "cross-env NEXT_PUBLIC_BUILD_ID=$(date +%s) next build",
     "start": "next start",
     "lint": "next lint"
   },
