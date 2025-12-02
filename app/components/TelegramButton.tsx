@@ -9,10 +9,7 @@ const TelegramButton: React.FC = () => {
       aria-label="Open GLM Telegram channel"
       className="fixed bottom-20 right-4 md:bottom-6 md:right-6 z-40 flex items-center gap-2 group telegram-button-entrance"
     >
-      {/* Messages Callout Badge */}
-      <span className="bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full text-xs md:text-sm font-medium text-gray-800 shadow-lg border border-gray-100 transition-all duration-300 group-hover:shadow-xl">
-        Messages
-      </span>
+     
       
       {/* Telegram Button */}
       <div className="w-14 h-14 md:w-16 md:h-16 min-w-[44px] min-h-[44px] bg-[#0088cc] rounded-full flex items-center justify-center shadow-lg telegram-button-pulse transition-all duration-300 hover:scale-110 hover:shadow-2xl active:scale-95">
