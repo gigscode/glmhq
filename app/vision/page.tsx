@@ -32,7 +32,7 @@ export default function VisionPage() {
         {/* Quote Section */}
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-black mb-8">
-            "SOUGHT OUT, A CITY NOT FORSAKEN.."
+            &ldquo;SOUGHT OUT, A CITY NOT FORSAKEN..&rdquo;
           </h2>
         </div>
 
