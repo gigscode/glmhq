@@ -4,9 +4,11 @@ import { useEffect, useState } from 'react';
 
 // Generate a build ID at build time (you can also use an env variable)
 const CURRENT_VERSION = process.env.NEXT_PUBLIC_BUILD_ID || Date.now().toString();
+const DISMISSED_VERSION_KEY = 'glm_dismissed_version';
 
 export default function VersionChecker() {
   const [showUpdatePrompt, setShowUpdatePrompt] = useState(false);
+  const [newVersion, setNewVersion] = useState<string | null>(null);
 
   useEffect(() => {
     // Check for new version every 5 minutes
@@ -24,7 +26,14 @@ export default function VersionChecker() {
           
           // Compare versions
           if (data.version && data.version !== CURRENT_VERSION) {
-            setShowUpdatePrompt(true);
+            // Check if user has already dismissed this version
+            const dismissedVersion = localStorage.getItem(DISMISSED_VERSION_KEY);
+            
+            // Only show prompt if this version hasn't been dismissed
+            if (dismissedVersion !== data.version) {
+              setNewVersion(data.version);
+              setShowUpdatePrompt(true);
+            }
           }
         }
       } catch (error) {
@@ -51,7 +60,17 @@ export default function VersionChecker() {
         });
       });
     }
+    // Clear the dismissed version so they see prompt for next update
+    localStorage.removeItem(DISMISSED_VERSION_KEY);
     window.location.reload();
+  };
+
+  const handleDismiss = () => {
+    // Store the dismissed version so prompt doesn't reappear
+    if (newVersion) {
+      localStorage.setItem(DISMISSED_VERSION_KEY, newVersion);
+    }
+    setShowUpdatePrompt(false);
   };
 
   if (!showUpdatePrompt) return null;
@@ -91,7 +110,7 @@ export default function VersionChecker() {
         Refresh
       </button>
       <button
-        onClick={() => setShowUpdatePrompt(false)}
+        onClick={handleDismiss}
         style={{
           backgroundColor: 'transparent',
           color: 'white',

@@ -14,7 +14,8 @@ Your Next.js app was experiencing stale content issues where users would see old
 ### 2. **Automatic Version Detection** (VersionChecker.tsx)
 - Client-side component that checks for new deployments every 5 minutes
 - Shows a friendly "Update Available" prompt when new version detected
-- Users can refresh immediately or continue working and refresh later
+- **Prompt appears only once per version** - won't reappear if dismissed
+- Users can refresh immediately or dismiss and continue working
 - Automatically clears all caches on refresh
 
 ### 3. **Smart Service Worker** (sw.js)

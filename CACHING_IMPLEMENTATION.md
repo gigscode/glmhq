@@ -33,8 +33,9 @@ Implemented a client-side version detection system that alerts users when a new 
 **How it works:**
 1. Every 5 minutes, the client checks the `/api/version` endpoint
 2. Compares the server version with the client's current version
-3. If different, shows a user-friendly prompt to refresh
-4. On refresh, clears all caches and reloads the page
+3. If different, shows a user-friendly prompt to refresh (only once per version)
+4. If user dismisses, the prompt won't reappear for that version
+5. On refresh, clears all caches and reloads the page
 
 ### 3. Service Worker Cache Strategy (public/sw.js)
 Updated the service worker with a smarter caching strategy:

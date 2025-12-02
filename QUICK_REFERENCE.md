@@ -9,6 +9,7 @@ Users seeing stale content after deployments → Now automatically notified of u
 **Location:** `app/components/VersionChecker.tsx`
 **Purpose:** Detects new deployments and prompts users
 **Frequency:** Checks every 5 minutes
+**Behavior:** Shows prompt only once per version (won't reappear if dismissed)
 
 ### 2. Version API
 **Endpoint:** `/api/version`
