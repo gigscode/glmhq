@@ -9,7 +9,7 @@ import { VisuallyHidden } from '@/components/ui/visually-hidden'
 import GlmLogo from '../assets/images/glm-logo.svg'
 
 const NAV_LINKS = [
-    { label: 'ABOUT US', href: '/' },
+    { label: 'ABOUT US', href: '/about' },
     { label: 'MEETINGS', href: '/' },
     { label: 'MESSAGES', href: '/messages' },
     { label: 'AUXANO CENTERS', href: '/auxano-centers' },

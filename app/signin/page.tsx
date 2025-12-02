@@ -27,7 +27,7 @@ export default function SignInPage() {
         {/* Form Card - Overlays both sections */}
         <div className="relative z-10 min-h-[calc(100vh-72px)] flex items-center justify-center px-4 py-8 md:py-12">
           <div className="max-4xl-mx-auto">
-            <div className="bg-white rounded-2xl shadow-2xl w-full max-w-lg p-8 md:p-10">
+            <div className="bg-white lg:border lg:border-1 lg:border-black rounded-2xl shadow-2xl w-full max-w-lg p-8 md:p-10">
               {/* Title */}
               <h1 className="text-3xl md:text-[24px] font-anton font-bold text-black mb-8 text-center">
                 SIGN IN{" "}

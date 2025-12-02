@@ -13,7 +13,7 @@ const Footer = () => {
             alt="Gospel Labour Ministry"
             width={140}
             height={56}
-            className="h-auto"
+            style={{ width: 'auto', height: 'auto' }}
           />
         </div>
 

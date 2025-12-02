@@ -77,7 +77,9 @@ export default function SeasonWordSection() {
             Do you know the trumpet can sound anytime from now? God loves you so much and his arms are wide open to you..
           </p>
           <Button variant="destructive" className="rounded-full px-6 py-3 font-semibold text-sm md:text-base shadow-md w-fit">
-            MAKE A DECISION FOR GOD
+            <Link href="/make-decision">
+              MAKE A DECISION FOR GOD
+            </Link>
           </Button>
         </div>
       </div>
