@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import NavBar from "./components/NavBar";
 import PWARegister from "./components/PWARegister";
 import PWAInstallPrompt from "./components/PWAInstallPrompt";
+import TelegramButton from "./components/TelegramButton";
 import { anton, inter } from "./fonts";
 
 export const metadata: Metadata = {
@@ -64,6 +65,7 @@ export default function RootLayout({
         <NavBar />
         {children}
         <Footer />
+        <TelegramButton />
         {/* Custom install prompt for Android and supporting browsers */}
         <PWAInstallPrompt />
       </body>

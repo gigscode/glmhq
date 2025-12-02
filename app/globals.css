@@ -177,4 +177,33 @@
     white-space: nowrap;
     border-width: 0;
   }
+
+  /* Telegram Button Animations */
+  @keyframes telegram-pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+
+  @keyframes telegram-entrance {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .telegram-button-pulse {
+    animation: telegram-pulse 2.5s ease-in-out infinite;
+  }
+
+  .telegram-button-entrance {
+    animation: telegram-entrance 0.5s ease-out forwards;
+  }
 }
