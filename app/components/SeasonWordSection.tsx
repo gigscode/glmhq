@@ -10,14 +10,14 @@ import sharpThreshingImg from '../assets/images/sharp-threshing.png';
 export default function SeasonWordSection() {
   return (
     <section className="w-full flex flex-col items-center py-6 sm:py-8 md:py-12 px-3 sm:px-4">
-      <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#2B1818] mb-4 sm:mb-6 md:mb-10 font-satoshi text-center px-2">A word for the season</h2>
+      <h2 className="font-anton font-normal text-2xl sm:text-3xl md:text-[40px] leading-[120%] text-[#2B1818] mb-4 sm:mb-6 md:mb-10 text-center px-2">A word for the season</h2>
       <div className="flex flex-col md:flex-row gap-4 sm:gap-6 md:gap-8 w-full max-w-5xl justify-center px-2 sm:px-0">
-        {/* Daily Devotional Card */}
+        {/* Aleitheia Daily Devotional Card */}
         <div className="bg-[#F3F3F3] rounded-2xl shadow-md flex-1 flex flex-col overflow-hidden min-w-0 max-w-full md:min-w-[320px] md:max-w-[500px]">
           <div className="h-40 sm:h-48 w-full relative">
             <Image
               src={devotionalImg}
-              alt="Daily Devotional"
+              alt="Aleitheia Daily Devotional"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover rounded-t-2xl"
@@ -25,7 +25,7 @@ export default function SeasonWordSection() {
             />
           </div>
           <div className="p-3 sm:p-4 md:p-6 flex flex-col flex-1">
-            <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-[#2B1818] font-satoshi mb-2">Daily Devotional</h3>
+            <h3 className="font-anton font-normal text-2xl sm:text-3xl md:text-[40px] leading-[120%] text-[#2B1818] mb-2">Aleitheia Daily Devotional</h3>
             <p className="text-xs sm:text-sm md:text-base text-[#2B1818] mb-3 sm:mb-4 md:mb-6">Start your day in a lovely way, fellowship with God through our 3-minutes inspiring devotionals.</p>
             <a
               href="https://t.me/aletheiadailydevotional"
@@ -51,7 +51,7 @@ export default function SeasonWordSection() {
             />
           </div>
           <div className="p-3 sm:p-4 md:p-6 flex flex-col flex-1">
-            <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-[#2B1818] font-satoshi mb-2">Testimonies</h3>
+            <h3 className="font-anton font-normal text-2xl sm:text-3xl md:text-[40px] leading-[120%] text-[#2B1818] mb-2">Testimonies</h3>
             <p className="text-xs sm:text-sm md:text-base text-[#2B1818] mb-3 sm:mb-4 md:mb-6">God is doing wondrous things among us through his word from the mouth of his servant.</p>
             <Link 
               href="https://t.me/glmtestimonies"
@@ -107,11 +107,11 @@ export default function SeasonWordSection() {
         </div>
         {/* Right Side: Text and Button */}
         <div className="flex-1 flex flex-col max-w-lg w-full px-2 sm:px-0">
-          <p className="text-lg font-big-shoulders font-bold text-[#170000] mb-4 sm:mb-5 md:mb-6 md:text-xl md:font-satoshi leading-[140%]">
+          <p className="font-big-shoulders font-bold text-[#170000] mb-4 sm:mb-5 md:mb-6 text-2xl sm:text-3xl md:text-[40px] leading-[120%]">
             Do you desire spiritual growth? Intimacy with God? Spiritual fervency? AUXANO is the avenue God has designed for your growth..
           </p>
-          <Button variant="destructive" asChild className="rounded-full px-6 py-3 font-semibold text-sm md:text-base shadow-md w-fit">
-            <Link href="/auxano-centers" rel="noopener noreferrer">
+          <Button variant="destructive" asChild className="rounded-full px-6 py-3 font-inter font-14px text-sm md:text-base shadow-md w-fit">
+            <Link href="/make-decision" rel="noopener noreferrer">
               REGISTER FOR AUXANO
             </Link>
           </Button>
@@ -133,7 +133,7 @@ export default function SeasonWordSection() {
         </div>
         {/* Right Side: Text and Button */}
         <div className="flex-1 flex flex-col items-center sm:items-start justify-center w-full px-2 sm:px-0">
-          <h3 className="font-anton font-normal text-[28px] sm:text-[32px] leading-[130%] tracking-normal text-[#1E1E1E] mb-3 sm:mb-4 md:text-[40px] lg:text-[48px] md:leading-[120%] text-center sm:text-left">
+          <h3 className="font-anton font-normal text-[27px] sm:text-[31px] leading-[130%] tracking-normal text-[#1E1E1E] mb-3 sm:mb-4 md:text-[39px] lg:text-[47px] md:leading-[120%] text-center sm:text-left">
             Behold, I will make thee a new sharp threshing instrument having teeth: thou shalt thresh the mountains, and..
           </h3>
           <p className="text-sm md:text-base text-black mb-4 sm:mb-5 md:mb-6 text-center sm:text-left">God has given us a vision..</p>
