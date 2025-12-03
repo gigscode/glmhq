@@ -7,6 +7,7 @@ import { Menu, X } from 'lucide-react'
 import { Dialog, DialogContent, DialogTrigger, DialogTitle } from '@/components/ui/dialog'
 import { VisuallyHidden } from '@/components/ui/visually-hidden'
 import GlmLogo from '../assets/images/glm-logo.svg'
+import GlmLogo2 from '../assets/images/glm-logo2.svg'
 
 const NAV_LINKS = [
     { label: 'ABOUT US', href: '/about' },
@@ -51,7 +52,7 @@ const NavBar = () => {
             <div className="w-full flex items-center justify-between md:px-6 lg:px-8">
                 <div className="pl-4 md:pl-0">
                     <Link href="/" className="cursor-pointer">
-                        <Image src={GlmLogo} alt="glm-logo" width={100} height={40} className="h-auto w-auto max-w-[100px] sm:max-w-none" />
+                        <Image src={isScrolled ? GlmLogo2 : GlmLogo} alt="glm-logo" width={100} height={40} className="h-auto w-auto max-w-[100px] sm:max-w-none" />
                     </Link>
                 </div>
                 {/* Desktop Nav */}
