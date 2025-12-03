@@ -5,12 +5,21 @@ import { useEffect, useState } from 'react';
 // Generate a build ID at build time (you can also use an env variable)
 const CURRENT_VERSION = process.env.NEXT_PUBLIC_BUILD_ID || Date.now().toString();
 const DISMISSED_VERSION_KEY = 'glm_dismissed_version';
+const INSTALLED_VERSION_KEY = 'glm_installed_version';
 
 export default function VersionChecker() {
   const [showUpdatePrompt, setShowUpdatePrompt] = useState(false);
   const [newVersion, setNewVersion] = useState<string | null>(null);
 
   useEffect(() => {
+    // Store the current version as installed when component mounts
+    const installedVersion = localStorage.getItem(INSTALLED_VERSION_KEY);
+    if (installedVersion !== CURRENT_VERSION) {
+      localStorage.setItem(INSTALLED_VERSION_KEY, CURRENT_VERSION);
+      // Clear dismissed version when user has updated
+      localStorage.removeItem(DISMISSED_VERSION_KEY);
+    }
+
     // Check for new version every 5 minutes
     const checkInterval = 5 * 60 * 1000; // 5 minutes
     
@@ -24,8 +33,10 @@ export default function VersionChecker() {
         if (response.ok) {
           const data = await response.json();
           
-          // Compare versions
-          if (data.version && data.version !== CURRENT_VERSION) {
+          // Compare versions - only show if server version is different from installed version
+          const currentInstalledVersion = localStorage.getItem(INSTALLED_VERSION_KEY) || CURRENT_VERSION;
+          
+          if (data.version && data.version !== currentInstalledVersion) {
             // Check if user has already dismissed this version
             const dismissedVersion = localStorage.getItem(DISMISSED_VERSION_KEY);
             
@@ -59,6 +70,10 @@ export default function VersionChecker() {
           caches.delete(name);
         });
       });
+    }
+    // Update the installed version to the new version
+    if (newVersion) {
+      localStorage.setItem(INSTALLED_VERSION_KEY, newVersion);
     }
     // Clear the dismissed version so they see prompt for next update
     localStorage.removeItem(DISMISSED_VERSION_KEY);
