@@ -30,7 +30,7 @@ const PROGRAMS = [
 
 const UpcomingPgSection = () => {
     return (
-        <section className="w-full flex flex-col items-center py-6 sm:py-10 md:py-16 px-3 sm:px-4 md:px-6 lg:px-8">
+        <section id="meetings" className="w-full flex flex-col items-center py-6 sm:py-10 md:py-16 px-3 sm:px-4 md:px-6 lg:px-8">
             <h2 className="font-anton text-2xl sm:text-3xl md:text-4xl text-[#181818] mb-6 sm:mb-8 md:mb-12 text-center px-2">Fellowship With Us</h2>
             <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
                 {PROGRAMS.map((p,) => (

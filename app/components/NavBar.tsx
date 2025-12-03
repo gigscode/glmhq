@@ -11,14 +11,14 @@ import GlmLogo2 from '../assets/images/glm-logo2.svg'
 
 const NAV_LINKS = [
     { label: 'ABOUT US', href: '/about' },
-    { label: 'MEETINGS', href: '/' },
+    { label: 'MEETINGS', href: '/#meetings' },
     { label: 'MESSAGES', href: '/messages' },
     { label: 'AUXANO CENTERS', href: '/auxano-centers' },
     { label: 'GIVING', href: '/giving' },
 ]
 
 const MOBILE_NAV_LINKS = [
-    { label: 'MEETINGS', href: '/' },
+    { label: 'MEETINGS', href: '/#meetings' },
     { label: 'MESSAGES', href: '/messages' },
     { label: 'AUXANO CENTERS', href: '/auxano-centers' },
     { label: 'GIVING', href: '/giving' },
